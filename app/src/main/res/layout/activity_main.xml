@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".MainActivity" tools:ignore="MergeRootFrame"
+    android:orientation="vertical">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:id="@+id/container"
+    android:layout_weight="8.5"></FrameLayout>
+
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="0dp"
+android:layout_gravity="bottom"
+    android:layout_weight="1.5">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/left_btn"
+            android:layout_gravity="left"
+            android:background="@drawable/left"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:id="@+id/right_btn"
+        android:background="@drawable/right_btn"
+        android:scaleType="fitXY" />
+    </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>
