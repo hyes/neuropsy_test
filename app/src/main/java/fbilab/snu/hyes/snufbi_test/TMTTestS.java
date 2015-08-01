@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -84,18 +83,10 @@ public class TMTTestS extends Activity {
                                 capture();
                                 saveResult();
 
-                                final Handler handler = new Handler(Looper.getMainLooper());
-                                final Runnable r = new Runnable() {
-                                    public void run() {
-
-                                        Intent intent = new Intent(TMTTestS.this, TestSelection.class);
-                                        intent.putExtra("id", id);
-                                        intent.putExtra("savepath", savepath);
-                                        startActivity(intent);
-                                    }
-                                };
-
-                                handler.postDelayed(r, 1000);
+                                Intent intent = new Intent(TMTTestS.this, TestSelection.class);
+                                intent.putExtra("id", id);
+                                intent.putExtra("savepath", savepath);
+                                startActivity(intent);
 
                                 Log.i("test", "time s : " + time_s + "times up");
 
@@ -2086,13 +2077,13 @@ public class TMTTestS extends Activity {
             }
         }
 
-    @Override
-    protected void onDestroy() {
-        Log.i("test", "s onDstory()");
-        mTimer.cancel();
-        mTimer.purge();
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        Log.i("test", "s onDstory()");
+//        mTimer.cancel();
+//        mTimer.purge();
+//        super.onDestroy();
+//    }
 
         @Override
         public void onBackPressed() {

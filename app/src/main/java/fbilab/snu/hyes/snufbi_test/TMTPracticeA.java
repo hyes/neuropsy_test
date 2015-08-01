@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -32,6 +31,7 @@ public class TMTPracticeA extends Activity {
     Date start, end;
     long time_a;
     boolean ch1, ch2, ch3, ch4, ch5, ch6;
+    private Stimulus s1, s2, s3, s4, s5, s6;
 
 
 
@@ -78,52 +78,52 @@ public class TMTPracticeA extends Activity {
                 if(event.getAction()==MotionEvent.ACTION_MOVE)
                 {
 
-                    if(idx == 0){
-                        if(event.getX() >= 200 && event.getY() >= 400 && event.getX() <= 300 && event.getY() <= 500){
+                    if(idx == 0 ){
+                        if(event.getX() >= s1.getX() && event.getY() >= s1.getY() && event.getX() <= s1.getX() + 70 && event.getY() <= s1.getY() + 70){
+                            idx += 1;
                             ch1 = true;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                        }
-                    }else if(idx == 1){
-                        if (event.getX() >= 450 && event.getY() >= 600 && event.getX() <= 550 && event.getY() <= 700) {
-                            ch2 = !ch2;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx++;
-                            Log.i("test", "if1: " + idx + "");
-                        }
-                    } else if (idx == 2) {
-                        if (event.getX() >= 800 && event.getY() >= 40 && event.getX() <= 900 && event.getY() <= 140) {
-                            ch3 = !ch3;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            Log.i("test", "if2: " + idx+"");
-                        }
-                    } else if (idx == 3) {
-                        if (event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500) {
-                            ch4 = !ch4;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                        }
-                    } else if (idx == 4) {
-                        if (event.getX() >= 890 && event.getY() >= 240 && event.getX() <= 990 && event.getY() <= 340) {
-                            ch5 = !ch5;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                        }
-                    } else if (idx == 5) {
-                        if (event.getX() >= 1000 && event.getY() >= 550 && event.getX() <= 1100 && event.getY() <= 650) {
-                            ch6 = !ch6;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
 
+                        }
+                    }else if(idx ==1){
+                        if(event.getX() >= s2.getX() && event.getY() >= s2.getY() && event.getX() <= s2.getX() + 70 && event.getY() <= s2.getY()+70){
+                            cfPoint.addAll(arPoint);
+                            arPoint.clear();
+                            idx += 1;
+                            ch2 = true;
+                        }
+                    }else if(idx == 2){
+                        if(event.getX() >= s3.getX() && event.getY() >= s3.getY() && event.getX() <= s3.getX() + 70 && event.getY() <= s3.getY()+70){
+
+                            cfPoint.addAll(arPoint);
+                            arPoint.clear();
+                            idx += 1;
+                            ch3 = true;
+                        }
+                    }else if(idx == 3){
+                        if(event.getX() >= s4.getX() && event.getY() >= s4.getY() && event.getX() <= s4.getX() + 70 && event.getY() <= s4.getY()+70){
+
+                            cfPoint.addAll(arPoint);
+                            arPoint.clear();
+                            idx += 1;
+                            ch4 = true;
+                        }
+                    }else if(idx == 4){
+                        if(event.getX() >= s5.getX() && event.getY() >= s5.getY() && event.getX() <= s5.getX() + 70 && event.getY() <= s5.getY()+70){
+
+                            cfPoint.addAll(arPoint);
+                            arPoint.clear();
+                            idx += 1;
+                            ch5 = true;
+                        }
+                    }else if(idx == 5) {
+                        if (event.getX() >= s6.getX() && event.getY() >= s6.getY() && event.getX() <= s6.getX() + 70 && event.getY() <= s6.getY() + 70) {
+
+                            cfPoint.addAll(arPoint);
+                            arPoint.clear();
+                            idx += 1;
+                            ch6 = true;
                         }
                     }
-
 
                     arPoint.add(new Point(event.getX(), event.getY(), true));
 
@@ -133,7 +133,7 @@ public class TMTPracticeA extends Activity {
 
                 if(event.getAction()==MotionEvent.ACTION_UP){
 
-                    if (idx == 5) {
+                    if (idx == 6) {
 
                         Toast.makeText(getApplicationContext(), "검사로 이동합니다", Toast.LENGTH_SHORT).show();
 
@@ -230,30 +230,37 @@ public class TMTPracticeA extends Activity {
             canvas.drawColor(Color.WHITE);
 
 
-            drawNumberCircle(canvas, 200, 400, 300, 500, "1");
-            drawNumberCircle(canvas, 450, 600, 550, 700, "2");
-            drawNumberCircle(canvas, 800, 40, 900, 140, "3");
-            drawNumberCircle(canvas, 670, 400, 770, 500, "4");
-            drawNumberCircle(canvas, 890, 240, 990, 340, "5");
-            drawNumberCircle(canvas, 1000, 550, 1100, 650, "6");
+            s1 = new Stimulus(200, 400, "1");
+            s2 = new Stimulus(450, 600, "2");
+            s3 = new Stimulus(800, 40, "3");
+            s4 = new Stimulus(670, 400, "4");
+            s5 = new Stimulus(890, 240, "5");
+            s6 = new Stimulus(1000, 550, "6");
+
+            drawNumberCircle(canvas, s1);
+            drawNumberCircle(canvas, s2);
+            drawNumberCircle(canvas, s3);
+            drawNumberCircle(canvas, s4);
+            drawNumberCircle(canvas, s5);
+            drawNumberCircle(canvas, s6);
 
             if(ch1){
-                drawCorrectCircle(200, 400);
+                drawCorrectCircle(s1);
             }
             if(ch2){
-                drawCorrectCircle(450, 600);
+                drawCorrectCircle(s2);
             }
             if(ch3){
-                drawCorrectCircle(800, 40);
+                drawCorrectCircle(s3);
             }
             if(ch4){
-                drawCorrectCircle(670, 400);
+                drawCorrectCircle(s4);
             }
             if(ch5){
-                drawCorrectCircle(890, 240);
+                drawCorrectCircle(s5);
             }
             if(ch6){
-                drawCorrectCircle(1000, 550);
+                drawCorrectCircle(s6);
             }
 
             drawText(canvas);
@@ -274,30 +281,34 @@ public class TMTPracticeA extends Activity {
 
         }
 
-        private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
 
-            RectF basicRec = new RectF(a, b, c, d);
+        private void drawNumberCircle(Canvas canvas, Stimulus stimulus){
+
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            String str = stimulus.getStr();
+            RectF basicRec = new RectF(x, y, x + 70, y+70);
             canvas.drawRoundRect(basicRec, 50, 50, Pnt);
             if(str.length() == 1) {
-                canvas.drawText(str, (a + c) / 2 - 10, (b + d) / 2 + 15, Pnt);
+                canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 10, (y + y+70) / 2 + 15, Pnt);
             }else{
-                canvas.drawText(str, (a + c) / 2 - 20, (b + d) / 2 + 15, Pnt);
+                canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 20, (y + y+70) / 2 + 15, Pnt);
             }
         }
 
-        private void drawCorrectCircle(int a, int b){
-
-            RectF basicRec = new RectF(a, b, a+100, b+100);
+        private void drawCorrectCircle(Stimulus stimulus){
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            RectF basicRec = new RectF(x, y, x+70, y+70);
             canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
         }
 
+
         private void drawText(Canvas canvas){
-
-            canvas.drawText("시작", 230, 530, textPaint);
-            canvas.drawText("끝", 1040, 680, textPaint);
-
             canvas.drawText("1부터 25까지 숫자가 있습니다.", 200, 200, textPaint);
             canvas.drawText("가능한 빠르게 순서대로 선을 그어 이어주세요.", 200, 250, textPaint);
+            canvas.drawText("시작", s1.getX()+13, s1.getY()+100, textPaint);
+            canvas.drawText("끝", s6.getX()+20, s6.getY()+100, textPaint);
 
         }
 

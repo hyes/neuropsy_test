@@ -21,20 +21,18 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
  * Created by hyes on 2015. 7. 10..
  */
-public class TMTTestA extends Activity {
+public class obsoleteTMTTestA extends Activity {
 
         public static String savepath;
         public static StringBuilder tmt_sb;
         static String id;
         ArrayList<Point> arPoint, cfPoint;
-        HashMap<Integer,Stimulus> sMap;
         private MyView vm;
         int idx = 0;
         Date start, end;
@@ -42,7 +40,7 @@ public class TMTTestA extends Activity {
         private TimerTask mTask;
         private Timer mTimer;
         boolean ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15, ch16, ch17, ch18, ch19, ch20, ch21, ch22, ch23, ch24, ch25;
-        private Stimulus s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25;
+
 
     public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -61,9 +59,14 @@ public class TMTTestA extends Activity {
 //        vm.setAlpha((float) 0.5);
             win.addContentView(vm, params);
 
+//        LayoutInflater inflater1 = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        LinearLayout linear = (LinearLayout)inflater1.inflate(R.layout.main, null);
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+//
+//        win.addContentView(linear, layoutParams);
+
             arPoint=new ArrayList<Point>();
             cfPoint=new ArrayList<Point>();
-            sMap = new HashMap<Integer, Stimulus>();
 
 
 
@@ -84,7 +87,7 @@ public class TMTTestA extends Activity {
                                 capture();
                                 saveResult();
 
-                                Intent intent = new Intent(TMTTestA.this, TestSelection.class);
+                                Intent intent = new Intent(obsoleteTMTTestA.this, TestSelection.class);
                                 intent.putExtra("id", id);
                                 intent.putExtra("savepath", savepath);
                                 startActivity(intent);
@@ -106,200 +109,202 @@ public class TMTTestA extends Activity {
                     {
 
                         if(idx == 0 ){
-                            if(event.getX() >= s1.getX() && event.getY() >= s1.getY() && event.getX() <= s1.getX() + 70 && event.getY() <= s1.getY() + 70){
+                            if(event.getX() >= 350 && event.getY() >=250 && event.getX() <= 450 && event.getY() <= 350){
+//                                Log.i("test", "in rect1: " + event.getX() + ", " + event.getY());
                                 idx += 1;
-                                ch1 = true;
+                                ch1 = !ch1;
 
                             }
                         }else if(idx ==1){
-                            if(event.getX() >= s2.getX() && event.getY() >= s2.getY() && event.getX() <= s2.getX() + 70 && event.getY() <= s2.getY()+70){
+                            if(event.getX() >= 100 && event.getY() >=90 && event.getX() <= 200 && event.getY() <= 190){
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch2 = true;
+                                ch2 = !ch2;
                             }
                         }else if(idx == 2){
-                            if(event.getX() >= s3.getX() && event.getY() >= s3.getY() && event.getX() <= s3.getX() + 70 && event.getY() <= s3.getY()+70){
+                            if(event.getX() >= 670 && event.getY() >= 300 && event.getX() <= 770 && event.getY() <= 400){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch3 = true;
+                                ch3 = !ch3;
                             }
                         }else if(idx == 3){
-                            if(event.getX() >= s4.getX() && event.getY() >= s4.getY() && event.getX() <= s4.getX() + 70 && event.getY() <= s4.getY()+70){
+                            if(event.getX() >= 800 && event.getY() >= 40 && event.getX() <= 900 && event.getY() <= 140){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch4 = true;
+                                ch4 = !ch4;
                             }
                         }else if(idx == 4){
-                            if(event.getX() >= s5.getX() && event.getY() >= s5.getY() && event.getX() <= s5.getX() + 70 && event.getY() <= s5.getY()+70){
+                            if(event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch5 = true;
+                                ch5 = !ch5;
                             }
                         }else if(idx == 5){
-                            if(event.getX() >= s6.getX() && event.getY() >= s6.getY() && event.getX() <= s6.getX() + 70 && event.getY() <= s6.getY()+70){
+                            if(event.getX() >= 1350 && event.getY() >= 80 && event.getX() <= 1450 && event.getY() <= 180){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch6 = true;
+                                ch6 = !ch6;
                             }
                         }else if(idx == 6){
-                            if(event.getX() >= s7.getX() && event.getY() >= s7.getY() && event.getX() <= s7.getX() + 70 && event.getY() <= s7.getY()+70){
+                            if(event.getX() >= 1750 && event.getY() >= 50 && event.getX() <= 1850 && event.getY() <= 150){
+
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch7 = true;
+                                ch7 = !ch7;
                             }
                         }else if(idx == 7){
-                            if(event.getX() >= s8.getX() && event.getY() >= s8.getY() && event.getX() <= s8.getX() + 70 && event.getY() <= s8.getY()+70){
+                            if(event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch8 = true;
+                                ch8 = !ch8;
                             }
                         }else if(idx == 8){
-                            if(event.getX() >= s9.getX() && event.getY() >= s9.getY() && event.getX() <= s9.getX() + 70 && event.getY() <= s9.getY()+70){
+                            if(event.getX() >= 1800 && event.getY() >= 500 && event.getX() <= 1900 && event.getY() <= 600){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch9 = true;
+                                ch9 = !ch9;
                             }
                         }else if(idx == 9){
-                            if(event.getX() >= s10.getX() && event.getY() >= s10.getY() && event.getX() <= s10.getX() + 70 && event.getY() <= s10.getY()+70){
+                            if(event.getX() >= 1280 && event.getY() >= 450 && event.getX() <= 1380 && event.getY() <= 550){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch10 = true;
+                                ch10 = !ch10;
                             }
                         }else if(idx == 10){
-                            if(event.getX() >= s11.getX() && event.getY() >= s11.getY() && event.getX() <= s11.getX() + 70 && event.getY() <= s11.getY()+70){
+                            if(event.getX() >= 1670 && event.getY() >= 730 && event.getX() <= 1770 && event.getY() <= 830){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch11 = true;
+                                ch11 = !ch11;
                             }
                         }else if(idx == 11){
-                            if(event.getX() >= s12.getX() && event.getY() >= s12.getY() && event.getX() <= s12.getX() + 70 && event.getY() <= s12.getY()+70){
+                            if(event.getX() >= 1340 && event.getY() >= 600 && event.getX() <= 1440 && event.getY() <= 700){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch12 = true;
+                                ch12 = !ch12;
                             }
                         }else if(idx == 12){
-                            if(event.getX() >= s13.getX() && event.getY() >= s13.getY() && event.getX() <= s13.getX() + 70 && event.getY() <= s13.getY()+70){
+                            if(event.getX() >= 890 && event.getY() >= 440 && event.getX() <= 990 && event.getY() <= 540){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch13 = true;
+                                ch13 = !ch13;
                             }
                         }else if(idx == 13){
-                            if(event.getX() >= s14.getX() && event.getY() >= s14.getY() && event.getX() <= s14.getX() + 70 && event.getY() <= s14.getY()+70){
+                            if(event.getX() >= 1180 && event.getY() >= 350 && event.getX() <= 1280 && event.getY() <= 450){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch14 = true;
+                                ch14 = !ch14;
                             }
                         }else if(idx == 14){
-                            if(event.getX() >= s15.getX() && event.getY() >= s15.getY() && event.getX() <= s15.getX() + 70 && event.getY() <= s15.getY()+70){
+                            if(event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch15 = true;
+                                ch15 = !ch15;
                             }
                         }else if(idx == 15){
-                            if(event.getX() >= s16.getX() && event.getY() >= s16.getY() && event.getX() <= s16.getX() + 70 && event.getY() <= s16.getY()+70){
+                            if(event.getX() >= 780 && event.getY() >= 540 && event.getX() <= 880 && event.getY() <= 640){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch16 = true;
+                                ch16 = !ch16;
                             }
                         }else if(idx == 16){
-                            if(event.getX() >= s17.getX() && event.getY() >= s17.getY() && event.getX() <= s17.getX() + 70 && event.getY() <= s17.getY()+70){
+                            if(event.getX() >= 200 && event.getY() >= 400 && event.getX() <= 300 && event.getY() <= 500){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch17 = true;
+                                ch17 = !ch17;
                             }
                         }else if(idx == 17){
-                            if(event.getX() >= s18.getX() && event.getY() >= s18.getY() && event.getX() <= s18.getX() + 70 && event.getY() <= s18.getY()+70){
+                            if(event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch18 = true;
+                                ch18 = !ch18;
                             }
                         }else if(idx == 18){
-                            if(event.getX() >= s19.getX() && event.getY() >= s19.getY() && event.getX() <= s19.getX() + 70 && event.getY() <= s19.getY()+70){
+                            if(event.getX() >= 450 && event.getY() >= 600 && event.getX() <= 550 && event.getY() <= 700){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch19 = true;
+                                ch19 = !ch19;
                             }
                         }else if(idx == 19){
-                            if(event.getX() >= s20.getX() && event.getY() >= s20.getY() && event.getX() <= s20.getX() + 70 && event.getY() <= s20.getY()+70){
+                            if(event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch20 = true;
+                                ch20 = !ch20;
                             }
                         }else if(idx == 20){
-                            if(event.getX() >= s21.getX() && event.getY() >= s21.getY() && event.getX() <= s21.getX() + 70 && event.getY() <= s21.getY()+70){
+                            if(event.getX() >= 540 && event.getY() >= 740 && event.getX() <= 640 && event.getY() <= 840){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch21 = true;
+                                ch21 = !ch21;
                             }
                         }else if(idx == 21){
-                            if(event.getX() >= s22.getX() && event.getY() >= s22.getY() && event.getX() <= s22.getX() + 70 && event.getY() <= s22.getY()+70){
+                            if(event.getX() >= 1000 && event.getY() >= 720 && event.getX() <= 1100 && event.getY() <= 820){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch22 = true;
+                                ch22 = !ch22;
                             }
                         }else if(idx == 22){
-                            if(event.getX() >= s23.getX() && event.getY() >= s23.getY() && event.getX() <= s23.getX() + 70 && event.getY() <= s23.getY()+70){
+                            if(event.getX() >= 680 && event.getY() >= 880 && event.getX() <= 780 && event.getY() <= 980){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch23 = true;
+                                ch23 = !ch23;
                             }
                         }else if(idx == 23){
-                            if(event.getX() >= s24.getX() && event.getY() >= s24.getY() && event.getX() <= s24.getX() + 70 && event.getY() <= s24.getY()+70){
+                            if(event.getX() >= 1610 && event.getY() >= 900 && event.getX() <= 1710 && event.getY() <= 1000){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch24 = true;
+                                ch24 = !ch24;
                             }
                         }else if(idx == 24){
-                            if(event.getX() >= s25.getX() && event.getY() >= s25.getY() && event.getX() <= s25.getX() + 70 && event.getY() <= s25.getY()+70){
+                            if(event.getX() >= 1240 && event.getY() >= 810 && event.getX() <= 1340 && event.getY() <= 910){
 
                                 cfPoint.addAll(arPoint);
                                 arPoint.clear();
                                 idx += 1;
-                                ch25 = true;
+                                ch25 = !ch25;
 
                             }
                         }
@@ -330,7 +335,7 @@ public class TMTTestA extends Activity {
                             final Runnable r = new Runnable() {
                                 public void run() {
 
-                                    Intent intent = new Intent(TMTTestA.this, TMTPracticeS.class);
+                                    Intent intent = new Intent(obsoleteTMTTestA.this, TMTPracticeS.class);
                                     intent.putExtra("id", id);
                                     intent.putExtra("savepath", savepath);
                                     intent.putExtra("tmtA", time_a );
@@ -394,7 +399,7 @@ public class TMTTestA extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(TMTTestA.this, TMTPracticeA.class);
+        Intent intent = new Intent(obsoleteTMTTestA.this, TMTPracticeA.class);
         intent.putExtra("id", id);
         intent.putExtra("savepath", savepath);
         startActivity(intent);
@@ -455,162 +460,109 @@ public class TMTTestA extends Activity {
                 this.canvas = canvas;
                 canvas.drawColor(Color.WHITE);
 
-//                Random random = new Random();
-//
-//                for(int i=1; i < 6; i++) {
-//
-//                    int x = random.nextInt(1240);
-//                    int y = random.nextInt(760);
-//                    Log.i("test","i"+i+": "+ x+ ","+ y);
-//
-//                    switch(i){
-//                        case 1: s1 = new Stimulus(x, y, ""+i); break;
-//                        case 2: s2 = new Stimulus(x, y, ""+i); break;
-//                        case 3: s3 = new Stimulus(x, y, ""+i); break;
-//                        case 4: s4 = new Stimulus(x, y, ""+i); break;
-//                        case 5: s5 = new Stimulus(x, y, ""+i); break;
-//                        case 6: s6 = new Stimulus(x, y, ""+i); break;
-//                        default : break;
-//
-//                    }
-//                }
-                s1 = new Stimulus(47, 275, "1");
-                s2 = new Stimulus(239, 242, "2");
-                s3 = new Stimulus(350, 320, "3");
-                s4 = new Stimulus(280, 540, "4");
-                s5 = new Stimulus(58, 420, "5");
-                s6 = new Stimulus(130, 600, "6");
-                s7 = new Stimulus(498, 625, "7");
-                s8 = new Stimulus(500, 419, "8");
-                s9 = new Stimulus(301, 110, "9");
-                s10 = new Stimulus(472, 238, "10");
-                s11 = new Stimulus(520, 70, "11");
-                s12 = new Stimulus(656, 312, "12");
-                s13 = new Stimulus(691, 32, "13");
-                s14 = new Stimulus(830, 107, "14");
-                s15 = new Stimulus(1140, 24, "15");
-                s16 = new Stimulus(1000, 131, "16");
-                s17 = new Stimulus(1180, 454, "17");
-                s18 = new Stimulus(1037, 454, "18");
-                s19 = new Stimulus(970, 645, "19");
-                s20 = new Stimulus(828, 500, "20");
-                s21 = new Stimulus(601, 620, "21");
-                s22 = new Stimulus(850, 371, "22");
-                s23 = new Stimulus(1080, 302, "23");
-                s24 = new Stimulus(806, 278, "24");
-                s25 = new Stimulus(620, 480, "25");
-
-//                sMap.put(s1.getX(), s1);
-//                sMap.put(s2.getX(), s2);
-//                sMap.put(s3.getX(), s3);
-//                sMap.put(s4.getX(), s4);
-//                sMap.put(s5.getX(), s5);
-
-
-
-
-                drawNumberCircle(canvas, s1);
-                drawNumberCircle(canvas, s2);
-                drawNumberCircle(canvas, s3);
-                drawNumberCircle(canvas, s4);
-                drawNumberCircle(canvas, s5);
-                drawNumberCircle(canvas, s6);
-                drawNumberCircle(canvas, s7);
-                drawNumberCircle(canvas, s8);
-                drawNumberCircle(canvas, s9);
-                drawNumberCircle(canvas, s10);
-                drawNumberCircle(canvas, s11);
-                drawNumberCircle(canvas, s12);
-                drawNumberCircle(canvas, s13);
-                drawNumberCircle(canvas, s14);
-                drawNumberCircle(canvas, s15);
-                drawNumberCircle(canvas, s16);
-                drawNumberCircle(canvas, s17);
-                drawNumberCircle(canvas, s18);
-                drawNumberCircle(canvas, s19);
-                drawNumberCircle(canvas, s20);
-                drawNumberCircle(canvas, s21);
-                drawNumberCircle(canvas, s22);
-                drawNumberCircle(canvas, s23);
-                drawNumberCircle(canvas, s24);
-                drawNumberCircle(canvas, s25);
+                drawNumberCircle(canvas, 350, 250, 450, 350, "1");
+                drawNumberCircle(canvas, 100, 90, 200, 190, "2");
+                drawNumberCircle(canvas, 670, 300, 770, 400, "3");
+                drawNumberCircle(canvas, 800, 40, 900, 140, "4");
+                drawNumberCircle(canvas, 1400, 300, 1500, 400, "5");
+                drawNumberCircle(canvas, 1350, 80, 1450, 180, "6");
+                drawNumberCircle(canvas, 1750, 50, 1850, 150, "7");
+                drawNumberCircle(canvas, 1600, 200, 1700, 300, "8");
+                drawNumberCircle(canvas, 1800, 500, 1900, 600, "9");
+                drawNumberCircle(canvas, 1280, 450, 1380, 550, "10");
+                drawNumberCircle(canvas, 1670, 730, 1770, 830, "11");
+                drawNumberCircle(canvas, 1340, 600, 1440, 700, "12");
+                drawNumberCircle(canvas, 890, 440, 990, 540, "13");
+                drawNumberCircle(canvas, 1180, 350, 1280, 450, "14");
+                drawNumberCircle(canvas, 900, 160, 1000, 260, "15");
+                drawNumberCircle(canvas, 780, 540, 880, 640, "16");
+                drawNumberCircle(canvas, 200, 400, 300, 500, "17");
+                drawNumberCircle(canvas, 40, 640, 140, 740, "18");
+                drawNumberCircle(canvas, 450, 600, 550, 700, "19");
+                drawNumberCircle(canvas, 100, 910, 200, 1010, "20");
+                drawNumberCircle(canvas, 540, 740, 640, 840, "21");
+                drawNumberCircle(canvas, 1000, 720, 1100, 820, "22");
+                drawNumberCircle(canvas, 680, 880, 780, 980, "23");
+                drawNumberCircle(canvas, 1610, 900, 1710, 1000, "24");
+                drawNumberCircle(canvas, 1240, 810, 1340, 910, "25");
 
 
                 if(ch1){
-                    drawCorrectCircle(s1);
+                    drawCorrectCircle(350, 250);
                 }
                 if(ch2){
-                    drawCorrectCircle(s2);
+                    drawCorrectCircle(100, 90);
                 }
                 if(ch3){
-                    drawCorrectCircle(s3);
+                    drawCorrectCircle(670, 300);
                 }
                 if(ch4){
-                    drawCorrectCircle(s4);
+                    drawCorrectCircle(800, 40);
                 }
                 if(ch5){
-                    drawCorrectCircle(s5);
+                    drawCorrectCircle(1400, 300);
                 }
                 if(ch6){
-                    drawCorrectCircle(s6);
+                    drawCorrectCircle(1350, 80);
                 }
                 if(ch7){
-                    drawCorrectCircle(s7);
+                    drawCorrectCircle(1750, 50);
                 }
                 if(ch8){
-                    drawCorrectCircle(s8);
+                    drawCorrectCircle(1600, 200);
                 }
                 if(ch9){
-                    drawCorrectCircle(s9);
+                    drawCorrectCircle(1800, 500);
                 }
                 if(ch10){
-                    drawCorrectCircle(s10);
+                    drawCorrectCircle(1280, 450);
                 }
                 if(ch11){
-                    drawCorrectCircle(s11);
+                    drawCorrectCircle(1670, 730);
                 }
                 if(ch12){
-                    drawCorrectCircle(s12);
+                    drawCorrectCircle(1340, 600);
                 }
 
                 if(ch13){
-                    drawCorrectCircle(s13);
+                    drawCorrectCircle(890, 440);
                 }
                 if(ch14){
-                    drawCorrectCircle(s14);
+                    drawCorrectCircle(1180, 350);
                 }
                 if(ch15){
-                    drawCorrectCircle(s15);
+                    drawCorrectCircle(900, 160);
                 }
                 if(ch16){
-                    drawCorrectCircle(s16);
+                    drawCorrectCircle(780, 540);
                 }
                 if(ch17){
-                    drawCorrectCircle(s17);
+                    drawCorrectCircle(200, 400);
                 }
                 if(ch18){
-                    drawCorrectCircle(s18);
+                    drawCorrectCircle(40, 640);
                 }
+
                 if(ch19){
-                    drawCorrectCircle(s19);
+                    drawCorrectCircle(450, 600);
                 }
                 if(ch20){
-                    drawCorrectCircle(s20);
+                    drawCorrectCircle(100, 910);
                 }
                 if(ch21){
-                    drawCorrectCircle(s21);
+                    drawCorrectCircle(540, 740);
                 }
                 if(ch22){
-                    drawCorrectCircle(s22);
+                    drawCorrectCircle(1000, 720);
                 }
                 if(ch23){
-                    drawCorrectCircle(s23);
+                    drawCorrectCircle(680, 880);
                 }
                 if(ch24){
-                    drawCorrectCircle(s24);
+                    drawCorrectCircle(1610, 900);
                 }
                 if(ch25){
-                    drawCorrectCircle(s25);
+                    drawCorrectCircle(1240, 810);
                 }
 
 
@@ -632,39 +584,32 @@ public class TMTTestA extends Activity {
 
             }
 
+            private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
 
-            private void drawNumberCircle(Canvas canvas, Stimulus stimulus){
-
-                int x = stimulus.getX();
-                int y = stimulus.getY();
-                String str = stimulus.getStr();
-                RectF basicRec = new RectF(x, y, x + 70, y+70);
+                RectF basicRec = new RectF(a, b, c, d);
                 canvas.drawRoundRect(basicRec, 50, 50, Pnt);
                 if(str.length() == 1) {
-                    canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 10, (y + y+70) / 2 + 15, Pnt);
+                    canvas.drawText(str, (a + c) / 2 - 10, (b + d) / 2 + 15, Pnt);
                 }else{
-                    canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 20, (y + y+70) / 2 + 15, Pnt);
+                    canvas.drawText(str, (a + c) / 2 - 20, (b + d) / 2 + 15, Pnt);
                 }
             }
 
-            private void drawCorrectCircle(Stimulus stimulus){
-                int x = stimulus.getX();
-                int y = stimulus.getY();
-                RectF basicRec = new RectF(x, y, x+70, y+70);
+            private void drawCorrectCircle(int a, int b){
+
+                RectF basicRec = new RectF(a, b, a+100, b+100);
                 canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
             }
 
             private void drawText(Canvas canvas){
 
-                canvas.drawText("시작", s1.getX()+13, s1.getY()+100, textPaint);
-                canvas.drawText("끝", s25.getX()+20, s25.getY()+100, textPaint);
+                canvas.drawText("시작", 370, 380, textPaint);
+                canvas.drawText("끝", 1280, 940, textPaint);
 
             }
 
 
         }
-
-
         public static File makeDirectory(String dir_path){
             File dir = new File(dir_path);
             if (!dir.exists())

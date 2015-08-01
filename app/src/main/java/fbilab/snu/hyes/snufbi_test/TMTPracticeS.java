@@ -32,6 +32,33 @@ public class TMTPracticeS extends Activity {
     Date start, end;
     long time_a;
     int ch1, ch2, ch3, ch4, ch5, ch6;
+    private Stimulus s1, s2, s3, s4, s5, s6;
+    private static final ArrayList<Stimulus> triangleList = new ArrayList<Stimulus>();
+    private static final ArrayList<Stimulus> squareList = new ArrayList<Stimulus>();
+
+    {
+
+        s1 = new Stimulus(470, 400, "▲");
+        s2 = new Stimulus(890, 370, "◼︎");
+        s3 = new Stimulus(1000, 580, "▲");
+        s4 = new Stimulus(700, 540, "◼︎");
+        s5 = new Stimulus(940, 200, "▲");
+        s6 = new Stimulus(780, 320, "◼︎");
+
+        triangleList.add(s1);
+        squareList.add(s2);
+        triangleList.add(s3);
+        squareList.add(s4);
+        triangleList.add(s5);
+        squareList.add(s6);
+
+    }
+
+//    HashMap<Integer, Stimulus> triangleList, squareList;
+
+
+
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +80,8 @@ public class TMTPracticeS extends Activity {
 
         arPoint=new ArrayList<Point>();
         cfPoint=new ArrayList<Point>();
-
+//        triangleList = new HashMap<Integer, Stimulus>();
+//        squareList = new HashMap<Integer, Stimulus>();
 
 
         vm.setOnTouchListener(new View.OnTouchListener() {
@@ -68,127 +96,147 @@ public class TMTPracticeS extends Activity {
                 }
                 if(event.getAction()==MotionEvent.ACTION_MOVE)
                 {
+                    if(idx ==0) {
+                        for (int i = 0; i < triangleList.size(); i++) {
+                            if (idx == 0) {
+                                int ii = 0;
+                                Stimulus temp = triangleList.get(i);
+                                Log.i("test", "po 0 " + temp.getX() + ", " + temp.getY());
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    triangleList.remove(i);
+                                    Log.i("test", "0, list size: " + triangleList.size());
+                                    idx += 1;
+//
+                                    if(temp.equals(s1)){
+                                        ch1 = 1;
+                                    }else if(temp.equals(s3)){
+                                        ch3 = 1;
+                                    }else if(temp.equals(s5)){
+                                        ch5 = 1;
+                                    }
 
-                    if(idx == 0){
-                        if(event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500){
+                                }
+                            }
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch1 = 1;
-                        }else if(event.getX() >= 890 && event.getY() >= 240 && event.getX() <= 990 && event.getY() <= 340){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch2 = 1;
-                        }else if(event.getX() >= 1340 && event.getY() >= 600 && event.getX() <= 1440 && event.getY() <= 700){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch3 = 1;
                         }
+                        cfPoint.addAll(arPoint);
+                        arPoint.clear();
+
                     }else if(idx == 1){
-                        if(event.getX() >= 1700 && event.getY() >= 200 && event.getX() <= 1800 && event.getY() <= 300){
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch4 = 1;
-                        }else if(event.getX() >= 780 && event.getY() >= 540 && event.getX() <= 880 && event.getY() <= 640){
+                        int ii =99;
+                        for(int i = 0; i<squareList.size(); i++){
+                            if(idx==1) {
+                                Stimulus temp = squareList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    squareList.remove(i);
+                                    Log.i("test", "list size1: " + squareList.size());
+                                    idx += 1;
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch5 = 1;
-                        }else  if(event.getX() >= 1280 && event.getY() >= 450 && event.getX() <= 1380 && event.getY() <= 550){
+                                    if(temp.equals(s2)){
+                                        ch2 = 1;
+                                    }else if(temp.equals(s4)){
+                                        ch4 = 1;
+                                    }else if(temp.equals(s6)){
+                                        ch6 = 1;
+                                    }
+                                }
+                            }
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch5 =1;
                         }
+                        cfPoint.addAll(arPoint);
+                        arPoint.clear();
+
                     }else if(idx == 2){
-                        if(event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500){
+                        for(int i = 0; i<triangleList.size(); i++){
+                            if(idx ==2) {
+                                Stimulus temp = triangleList.get(i);
+                                Log.i("test", "po 2 " + temp.getX() + ", " + temp.getY());
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    triangleList.remove(i);
+                                    Log.i("test", "2, list size: " + triangleList.size());
+                                    idx += 1;
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch1 = 1;
-                        }else if(event.getX() >= 890 && event.getY() >= 240 && event.getX() <= 990 && event.getY() <= 340){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch2 = 1;
-                        }else if(event.getX() >= 1340 && event.getY() >= 600 && event.getX() <= 1440 && event.getY() <= 700){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch3 = 1;
+                                    if(temp.equals(s1)){
+                                        ch1 = 1;
+                                    }else if(temp.equals(s3)){
+                                        ch3 = 1;
+                                    }else if(temp.equals(s5)){
+                                        ch3 = 1;
+                                    }
+                                }
+                            }
                         }
+
+                        cfPoint.addAll(arPoint);
+                        arPoint.clear();
+
                     }else if(idx == 3){
-                        if(event.getX() >= 1700 && event.getY() >= 200 && event.getX() <= 1800 && event.getY() <= 300){
+                        for(int i = 0; i<squareList.size(); i++){
+                            if(idx==3) {
+                                Stimulus temp = squareList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    squareList.remove(i);
+                                    Log.i("test", "list size3: " + squareList.size());
+                                    idx += 1;
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch4 = 1;
-                        }else if(event.getX() >= 780 && event.getY() >= 540 && event.getX() <= 880 && event.getY() <= 640){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch5 = 1;
-                        }else  if(event.getX() >= 1280 && event.getY() >= 450 && event.getX() <= 1380 && event.getY() <= 550){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch6 = 1;
+                                    if(temp.equals(s2)){
+                                        ch2 = 1;
+                                    }else if(temp.equals(s4)){
+                                        ch4 = 1;
+                                    }else if(temp.equals(s6)){
+                                        ch6 = 1;
+                                    }
+                                }
+                            }
                         }
+                        cfPoint.addAll(arPoint);
+                        arPoint.clear();
+
                     }else if(idx == 4){
-                        if(event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500){
+                        for(int i = 0; i<triangleList.size(); i++){
+                            if(idx ==4) {
+                                Stimulus temp = triangleList.get(i);
+                                Log.i("test", "po 4 " + temp.getX() + ", " + temp.getY());
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    triangleList.remove(i);
+                                    Log.i("test", "4, list size: " + triangleList.size());
+                                    idx += 1;
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch1 = 1;
-                        }else if(event.getX() >= 890 && event.getY() >= 240 && event.getX() <= 990 && event.getY() <= 340){
+                                    if(temp.equals(s1)){
+                                        ch1 = 1;
+                                    }else if(temp.equals(s3)){
+                                        ch3 = 1;
+                                    }else if(temp.equals(s5)){
+                                        ch5 = 1;
+                                    }
+                                }
+                            }
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch2 = 1;
-                        }else if(event.getX() >= 1340 && event.getY() >= 600 && event.getX() <= 1440 && event.getY() <= 700){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch3 = 1;
                         }
-                    }else if(idx == 5){
-                        if(event.getX() >= 1700 && event.getY() >= 200 && event.getX() <= 1800 && event.getY() <= 300){
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch4 = 1;
-                        }else if(event.getX() >= 780 && event.getY() >= 540 && event.getX() <= 880 && event.getY() <= 640){
+                    }else if(idx == 5) {
+                        int ii =99;
+                        for(int i = 0; i<squareList.size(); i++){
+                            if(idx == 5) {
+                                Stimulus temp = squareList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    squareList.remove(i);
+                                    Log.i("test", "list size 5: " + triangleList.size());
+                                    idx += 1;
 
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch5 = 1;
-                        }else  if(event.getX() >= 1280 && event.getY() >= 450 && event.getX() <= 1380 && event.getY() <= 550){
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                            ch6 = 1;
+                                    if(temp.equals(s2)){
+                                        ch2 = 1;
+                                    }else if(temp.equals(s4)){
+                                        ch4 = 1;
+                                    }else if(temp.equals(s6)){
+                                        ch6 = 1;
+                                    }
+                                }
+                            }
                         }
+                        cfPoint.addAll(arPoint);
+                        arPoint.clear();
                     }
 
                     arPoint.add(new Point(event.getX(), event.getY(), true));
@@ -298,31 +346,41 @@ public class TMTPracticeS extends Activity {
             this.canvas = canvas;
             canvas.drawColor(Color.TRANSPARENT);
 
-            drawNumberCircle(canvas, 670, 400, 770, 500, "▲");
-            drawNumberCircle(canvas, 1700, 200, 1800, 300, "◼︎");
-            drawNumberCircle(canvas, 1340, 600, 1440, 700, "▲");
-            drawNumberCircle(canvas, 780, 540, 880, 640, "◼︎");
-            drawNumberCircle(canvas, 890, 240, 990, 340, "▲");
-            drawNumberCircle(canvas, 1280, 450, 1380, 550, "◼︎");
+//            s1 = new Stimulus(670, 400, "▲");
+//            s2 = new Stimulus(890, 370, "◼︎");
+//            s3 = new Stimulus(1100, 580, "▲");
+//            s4 = new Stimulus(780, 320, "◼︎");
+//            s5 = new Stimulus(520, 240, "▲");
+//            s6 = new Stimulus(700, 450, "◼︎");
+
+
+
+            drawNumberCircle(canvas, s1);
+            drawNumberCircle(canvas, s2);
+            drawNumberCircle(canvas, s3);
+            drawNumberCircle(canvas, s4);
+            drawNumberCircle(canvas, s5);
+            drawNumberCircle(canvas, s6);
+
 
 
             if(ch1 == 1){
-                drawCorrectCircle(670, 400);
+                drawCorrectCircle(s1);
             }
-            if(ch1 == 2){
-                drawCorrectCircle(1340, 600);
+            if(ch2 ==1){
+                drawCorrectCircle(s2);
             }
-            if(ch1 == 3){
-                drawCorrectCircle(890, 240);
+            if(ch3 == 1){
+                drawCorrectCircle(s3);
             }
-            if(ch1 == 4){
-                drawCorrectCircle(1700, 200);
+            if(ch4 == 1){
+                drawCorrectCircle(s4);
             }
-            if(ch1 == 5){
-                drawCorrectCircle(780, 540);
+            if(ch5 == 1){
+                drawCorrectCircle(s5);
             }
-            if(ch1 == 6){
-                drawCorrectCircle(1280, 450);
+            if(ch6 == 1){
+                drawCorrectCircle(s6);
             }
 
             drawText(canvas);
@@ -343,35 +401,38 @@ public class TMTPracticeS extends Activity {
 
         }
 
-        private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
+        private void drawNumberCircle(Canvas canvas, Stimulus stimulus){
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            String str = stimulus.getStr();
 
-            RectF basicRec = new RectF(a, b, c, d);
+            RectF basicRec = new RectF(x, y, x+70, y+70);
             canvas.drawRoundRect(basicRec, 50, 50, Pnt);
             if(str.equals("▲")){
-                canvas.drawText(str, (a + c) / 2 - 25, (b + d) / 2 + 35, Pnt1);
+                canvas.drawText(str, (x + x + 70) / 2 - 25, (y + y + 70) / 2 + 35, Pnt1);
             }else if(str.equals("◼︎")){
-                canvas.drawText(str, (a + c) / 2 - 28, (b + d) / 2 + 17, Pnt);
+                canvas.drawText(str, (x + x + 70) / 2 - 28, (y + y + 70) / 2 + 17, Pnt);
             }
 
         }
 
-        private void drawCorrectCircle(int a, int b){
-
-            RectF basicRec = new RectF(a, b, a+100, b+100);
+        private void drawCorrectCircle(Stimulus stimulus){
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            RectF basicRec = new RectF(x, y, x+70, y+70);
             canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
         }
 
+
         private void drawText(Canvas canvas){
-
-            canvas.drawText("시작", 700, 530, textPaint);
-            canvas.drawText("끝", 1320, 580, textPaint);
-
             canvas.drawText("세모(▲), 네모(◼)︎ 두가지 모양이 있습니다.", 300, 200, textPaint);
             canvas.drawText("두가지 모양을 번갈아가면서 ", 300, 250, textPaint);
             canvas.drawText("가능한 빠르게 순서대로 선을 그어 이어주세요.", 300, 300, textPaint);
 
-        }
+            canvas.drawText("시작", s1.getX()+13, s1.getY()+100, textPaint);
+            canvas.drawText("끝", s6.getX()+20, s6.getY()+100, textPaint);
 
+        }
 
     }
 }

@@ -15,10 +15,7 @@
             android:name=".Intro"
             android:label="@string/title_activity_intro" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
 
@@ -49,10 +46,11 @@
             android:name=".TMTPracticeA"
             android:label="@string/app_name" >
 
+
         </activity>
 
         <activity
-            android:name=".TMTTestA"
+            android:name=".obsoleteTMTTestA"
             android:label="@string/app_name" >
         </activity>
 
@@ -73,6 +71,10 @@
 
         <activity
             android:name=".TMTPracticeS">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".TMTTestNS">
@@ -85,6 +87,11 @@
         <activity
             android:name=".TMTPracticeNS">
 
+
+        </activity>
+
+        <activity
+            android:name=".TMTTestA">
 
         </activity>
 
