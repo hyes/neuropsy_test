@@ -14,7 +14,10 @@
         <activity
             android:name=".Intro"
             android:label="@string/title_activity_intro" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
         </activity>
@@ -71,10 +74,7 @@
 
         <activity
             android:name=".TMTPracticeS">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity android:name=".TMTTestNS">

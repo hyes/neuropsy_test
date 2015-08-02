@@ -47,12 +47,36 @@ public class TestSelection extends ActionBarActivity {
 //            }
 //        });
 
-        Button tmt_btn = (Button)findViewById(R.id.tmt_a_btn);
-        tmt_btn.setOnClickListener(new View.OnClickListener() {
+        Button tmt_btn_a = (Button)findViewById(R.id.tmt_btn_a);
+        tmt_btn_a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //class 추가 할 것!
                 Intent intent = new Intent(getApplicationContext(), TMTPracticeA.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("savepath", savepath);
+                startActivity(intent);
+            }
+        });
+        Button tmt_btn_b = (Button)findViewById(R.id.tmt_btn_b);
+        tmt_btn_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //class 추가 할 것!
+                Intent intent = new Intent(getApplicationContext(), TMTPracticeS.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("savepath", savepath);
+                startActivity(intent);
+            }
+        });
+        Button tmt_btn_c = (Button)findViewById(R.id.tmt_btn_c);
+        tmt_btn_c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //class 추가 할 것!
+                Intent intent = new Intent(getApplicationContext(), TMTPracticeNS.class);
                 intent.putExtra("id", id);
                 intent.putExtra("name", name);
                 intent.putExtra("savepath", savepath);

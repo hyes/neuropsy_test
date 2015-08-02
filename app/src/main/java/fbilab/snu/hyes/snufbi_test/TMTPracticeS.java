@@ -37,7 +37,6 @@ public class TMTPracticeS extends Activity {
     private static final ArrayList<Stimulus> squareList = new ArrayList<Stimulus>();
 
     {
-
         s1 = new Stimulus(470, 400, "▲");
         s2 = new Stimulus(890, 370, "◼︎");
         s3 = new Stimulus(1000, 580, "▲");
@@ -51,14 +50,7 @@ public class TMTPracticeS extends Activity {
         squareList.add(s4);
         triangleList.add(s5);
         squareList.add(s6);
-
     }
-
-//    HashMap<Integer, Stimulus> triangleList, squareList;
-
-
-
-
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,144 +91,77 @@ public class TMTPracticeS extends Activity {
                     if(idx ==0) {
                         for (int i = 0; i < triangleList.size(); i++) {
                             if (idx == 0) {
-                                int ii = 0;
                                 Stimulus temp = triangleList.get(i);
-                                Log.i("test", "po 0 " + temp.getX() + ", " + temp.getY());
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     triangleList.remove(i);
-                                    Log.i("test", "0, list size: " + triangleList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-//
-                                    if(temp.equals(s1)){
-                                        ch1 = 1;
-                                    }else if(temp.equals(s3)){
-                                        ch3 = 1;
-                                    }else if(temp.equals(s5)){
-                                        ch5 = 1;
-                                    }
-
                                 }
                             }
-
                         }
-                        cfPoint.addAll(arPoint);
-                        arPoint.clear();
-
                     }else if(idx == 1){
 
-                        int ii =99;
                         for(int i = 0; i<squareList.size(); i++){
                             if(idx==1) {
                                 Stimulus temp = squareList.get(i);
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     squareList.remove(i);
-                                    Log.i("test", "list size1: " + squareList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-
-                                    if(temp.equals(s2)){
-                                        ch2 = 1;
-                                    }else if(temp.equals(s4)){
-                                        ch4 = 1;
-                                    }else if(temp.equals(s6)){
-                                        ch6 = 1;
-                                    }
                                 }
                             }
-
                         }
-                        cfPoint.addAll(arPoint);
-                        arPoint.clear();
-
                     }else if(idx == 2){
                         for(int i = 0; i<triangleList.size(); i++){
                             if(idx ==2) {
                                 Stimulus temp = triangleList.get(i);
-                                Log.i("test", "po 2 " + temp.getX() + ", " + temp.getY());
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     triangleList.remove(i);
-                                    Log.i("test", "2, list size: " + triangleList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-
-                                    if(temp.equals(s1)){
-                                        ch1 = 1;
-                                    }else if(temp.equals(s3)){
-                                        ch3 = 1;
-                                    }else if(temp.equals(s5)){
-                                        ch3 = 1;
-                                    }
                                 }
                             }
                         }
-
-                        cfPoint.addAll(arPoint);
-                        arPoint.clear();
 
                     }else if(idx == 3){
                         for(int i = 0; i<squareList.size(); i++){
                             if(idx==3) {
                                 Stimulus temp = squareList.get(i);
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     squareList.remove(i);
-                                    Log.i("test", "list size3: " + squareList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-
-                                    if(temp.equals(s2)){
-                                        ch2 = 1;
-                                    }else if(temp.equals(s4)){
-                                        ch4 = 1;
-                                    }else if(temp.equals(s6)){
-                                        ch6 = 1;
-                                    }
                                 }
                             }
                         }
-                        cfPoint.addAll(arPoint);
-                        arPoint.clear();
-
                     }else if(idx == 4){
                         for(int i = 0; i<triangleList.size(); i++){
                             if(idx ==4) {
                                 Stimulus temp = triangleList.get(i);
-                                Log.i("test", "po 4 " + temp.getX() + ", " + temp.getY());
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     triangleList.remove(i);
-                                    Log.i("test", "4, list size: " + triangleList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-
-                                    if(temp.equals(s1)){
-                                        ch1 = 1;
-                                    }else if(temp.equals(s3)){
-                                        ch3 = 1;
-                                    }else if(temp.equals(s5)){
-                                        ch5 = 1;
-                                    }
                                 }
                             }
-
                         }
-
                     }else if(idx == 5) {
-                        int ii =99;
                         for(int i = 0; i<squareList.size(); i++){
                             if(idx == 5) {
                                 Stimulus temp = squareList.get(i);
                                 if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
                                     squareList.remove(i);
-                                    Log.i("test", "list size 5: " + triangleList.size());
+                                    checkPosition(idx, temp);
                                     idx += 1;
-
-                                    if(temp.equals(s2)){
-                                        ch2 = 1;
-                                    }else if(temp.equals(s4)){
-                                        ch4 = 1;
-                                    }else if(temp.equals(s6)){
-                                        ch6 = 1;
-                                    }
                                 }
                             }
                         }
-                        cfPoint.addAll(arPoint);
-                        arPoint.clear();
                     }
 
                     arPoint.add(new Point(event.getX(), event.getY(), true));
@@ -251,9 +176,7 @@ public class TMTPracticeS extends Activity {
 
                         Toast.makeText(getApplicationContext(), "검사로 이동합니다.", Toast.LENGTH_SHORT).show();
 
-
                         final Handler handler = new Handler();
-
                         final Runnable r = new Runnable() {
                             public void run() {
 
@@ -266,19 +189,50 @@ public class TMTPracticeS extends Activity {
                         };
 
                         handler.postDelayed(r, 2000);
-
-
                     }
-
                 }
 
-
                 return false;
+            }
+
+            private void changeLineType() {
+                cfPoint.addAll(arPoint);
+                arPoint.clear();
+            }
+
+            private void checkPosition(int idx, Stimulus temp) {
+                switch(idx){
+                    case 0:
+                    case 2:
+                    case 4:
+                        if(temp.equals(s1)){
+                            ch1 = 1;
+                        }else if(temp.equals(s3)){
+                            ch3 = 1;
+                        }else if(temp.equals(s5)){
+                            ch5 = 1;
+                        }
+                        break;
+
+                    case 1:
+                    case 3:
+                    case 5:
+                        if(temp.equals(s2)){
+                            ch2 = 1;
+                        }else if(temp.equals(s4)){
+                            ch4 = 1;
+                        }else if(temp.equals(s6)){
+                            ch6 = 1;
+                        }
+                        break;
+                }
             }
         });
 
 
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -346,21 +300,12 @@ public class TMTPracticeS extends Activity {
             this.canvas = canvas;
             canvas.drawColor(Color.TRANSPARENT);
 
-//            s1 = new Stimulus(670, 400, "▲");
-//            s2 = new Stimulus(890, 370, "◼︎");
-//            s3 = new Stimulus(1100, 580, "▲");
-//            s4 = new Stimulus(780, 320, "◼︎");
-//            s5 = new Stimulus(520, 240, "▲");
-//            s6 = new Stimulus(700, 450, "◼︎");
-
-
-
-            drawNumberCircle(canvas, s1);
-            drawNumberCircle(canvas, s2);
-            drawNumberCircle(canvas, s3);
-            drawNumberCircle(canvas, s4);
-            drawNumberCircle(canvas, s5);
-            drawNumberCircle(canvas, s6);
+            drawShapeCircle(canvas, s1);
+            drawShapeCircle(canvas, s2);
+            drawShapeCircle(canvas, s3);
+            drawShapeCircle(canvas, s4);
+            drawShapeCircle(canvas, s5);
+            drawShapeCircle(canvas, s6);
 
 
 
@@ -401,7 +346,7 @@ public class TMTPracticeS extends Activity {
 
         }
 
-        private void drawNumberCircle(Canvas canvas, Stimulus stimulus){
+        private void drawShapeCircle(Canvas canvas, Stimulus stimulus){
             int x = stimulus.getX();
             int y = stimulus.getY();
             String str = stimulus.getStr();

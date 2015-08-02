@@ -584,6 +584,7 @@ public class obsoleteTMTTestA extends Activity {
 
             }
 
+
             private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
 
                 RectF basicRec = new RectF(a, b, c, d);

@@ -51,14 +51,9 @@ public class TMTPracticeA extends Activity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
-//        vm.setAlpha((float) 0.5);
+
         win.addContentView(vm, params);
 
-//        LayoutInflater inflater1 = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LinearLayout linear = (LinearLayout)inflater1.inflate(R.layout.main, null);
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-//
-//        win.addContentView(linear, layoutParams);
 
         arPoint=new ArrayList<Point>();
         cfPoint=new ArrayList<Point>();

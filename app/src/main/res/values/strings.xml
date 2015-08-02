@@ -4,4 +4,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_intro">Intro</string>
     <string name="task_complete">진행중인 검사가 완료되었습니다. 다음 검사로 안내해드리겠습니다.</string>
+    <string name="tmt_btn_a">TMT-A</string>
+    <string name="tmt_btn_b">TMT-B</string>
+    <string name="tmt_btn_c">TMT-C</string>
+    <string name="raven_a_btn">Raven_Odd</string>
+    <string name="raven_b_btn">Raven_Even</string>
+    <string name="flanker_btn">Flanker</string>
 </resources>

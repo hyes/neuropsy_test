@@ -699,26 +699,15 @@ public class TMTTestNS extends Activity {
       private void saveResult() {
 
             MakeFile mf = new MakeFile();
-            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt.txt");
+            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt_c.txt");
 
             tmt_sb = new StringBuilder("id");
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append(id);
             tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append("TMT_A");
-            tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append(time_a);
-            tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append("TMT_S");
-            tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append(time_s);
-            tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append("TMT_NS");
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append(time_ns);
-            tmt_sb.append(System.getProperty("line.separator"));
-
-
             mf.writeFile(file, tmt_sb.toString().getBytes());
 
 
@@ -730,7 +719,7 @@ public class TMTTestNS extends Activity {
             vm.setDrawingCacheEnabled(true);
             Bitmap b = vm.getDrawingCache();
             try {
-                b.compress(Bitmap.CompressFormat.JPEG, 95, new FileOutputStream(savepath + "/" + id + "_TMT_NS.jpg"));
+                b.compress(Bitmap.CompressFormat.JPEG, 95, new FileOutputStream(savepath + "/" + id + "_TMT_C.jpg"));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

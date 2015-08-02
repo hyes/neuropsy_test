@@ -16,10 +16,8 @@
         <Button
             android:layout_width="180dp"
             android:layout_height="50dp"
-            android:text="Flanker"
-            android:id="@+id/flanker_btn"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/tmt_btn_a"
+            android:layout_below="@+id/d2_btn"
             android:background="@drawable/button_customize_menu"
             android:textColor="#fff"
             android:textStyle="bold" />
@@ -29,8 +27,38 @@
             android:layout_height="50dp"
             android:text="Raven_A"
             android:id="@+id/raven_a_btn"
-            android:layout_below="@+id/tmt_a_btn"
-            android:layout_alignStart="@+id/tmt_a_btn"
+            android:layout_below="@+id/tmt_btn_b"
+            android:background="@drawable/button_customize_menu"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:id="@+id/tmt_btn_b"
+            android:layout_below="@+id/d2_btn"
+            android:background="@drawable/button_customize_menu"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:text="Raven_B"
+            android:id="@+id/raven_b_btn"
+            android:layout_below="@+id/tmt_btn_b"
             android:background="@drawable/button_customize_menu"
             android:textColor="#fff"
             android:textStyle="bold"
@@ -44,16 +72,13 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|left"
         android:layout_weight="1"
-        android:layout_marginLeft="5dp"
-        >
+        android:layout_marginRight="5dp">
 
         <Button
             android:layout_width="180dp"
             android:layout_height="50dp"
-            android:text="TMT"
-            android:id="@+id/tmt_a_btn"
-            android:layout_below="@+id/d2_btn"
-            android:layout_alignStart="@+id/d2_btn"
+            android:id="@+id/tmt_btn_c"
+            android:layout_below="@+id/tmt_btn_a"
             android:background="@drawable/button_customize_menu"
             android:textColor="#fff"
             android:textStyle="bold" />
@@ -61,15 +86,14 @@
         <Button
             android:layout_width="180dp"
             android:layout_height="50dp"
-            android:text="Raven_B"
-            android:id="@+id/raven_b_btn"
-            android:layout_below="@+id/tmt_a_btn"
-            android:layout_alignStart="@+id/tmt_a_btn"
+            android:text="Flanker"
+            android:id="@+id/flanker_btn"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/button_customize_menu"
             android:textColor="#fff"
             android:textStyle="bold"
             android:layout_marginTop="10dp" />
-
     </LinearLayout>
 
 </LinearLayout>

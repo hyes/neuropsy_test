@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -317,20 +318,19 @@ public class TMTTestA extends Activity {
 
                             mTimer.cancel();
                             mTimer.purge();
-                           // mTimer.cancel();
+
                             end = new Date();
                             time_a = end.getTime() - start.getTime();
 
-                            idx++;
                             capture();
-
                             saveResult();
+                            Toast.makeText(getApplicationContext(), "검사 메뉴로 이동합니다", Toast.LENGTH_SHORT).show();
                             final Handler handler = new Handler();
 
                             final Runnable r = new Runnable() {
                                 public void run() {
 
-                                    Intent intent = new Intent(TMTTestA.this, TMTPracticeS.class);
+                                    Intent intent = new Intent(TMTTestA.this, TestSelection.class);
                                     intent.putExtra("id", id);
                                     intent.putExtra("savepath", savepath);
                                     intent.putExtra("tmtA", time_a );
@@ -355,7 +355,7 @@ public class TMTTestA extends Activity {
     private void saveResult() {
 
             MakeFile mf = new MakeFile();
-            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt.txt");
+            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt_a.txt");
 
             tmt_sb = new StringBuilder("id");
             tmt_sb.append(System.getProperty("line.separator"));

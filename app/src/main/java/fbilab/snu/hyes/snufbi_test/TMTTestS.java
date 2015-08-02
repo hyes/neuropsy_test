@@ -41,10 +41,67 @@ public class TMTTestS extends Activity {
         private TimerTask mTask;
         private Timer mTimer;
         int ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15, ch16, ch17, ch18, ch19, ch20, ch21, ch22, ch23, ch24, ch25;
+        private Stimulus s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25;
+
+        private static final ArrayList<Stimulus> triangleList = new ArrayList<Stimulus>();
+        private static final ArrayList<Stimulus> squareList = new ArrayList<Stimulus>();
+
+        {
+            s1 = new Stimulus(470, 400, "▲");
+            s2 = new Stimulus(890, 370, "◼︎");
+            s3 = new Stimulus(1000, 580, "▲");
+            s4 = new Stimulus(700, 540, "◼︎");
+            s5 = new Stimulus(940, 200, "▲");
+            s6 = new Stimulus(780, 320, "◼︎");
+            s7 = new Stimulus(100, 90, "▲");
+            s8 = new Stimulus(150, 340, "◼︎");
+            s9 = new Stimulus(350, 400, "▲");
+            s10 = new Stimulus(600, 40, "◼︎");
+            s11 = new Stimulus(1100, 140, "▲");
+            s12 = new Stimulus(685, 50, "◼︎");
+            s13 = new Stimulus(180, 530, "▲");
+            s14 = new Stimulus(1080, 630, "◼︎");
+            s15 = new Stimulus(1050, 400, "▲");
+            s16 = new Stimulus(540, 590, "◼︎");
+            s17 = new Stimulus(160, 200, "▲");
+            s18 = new Stimulus(340, 400, "◼︎");
+            s19 = new Stimulus(890, 320, "▲");
+            s20 = new Stimulus(740, 640, "◼︎");
+            s21 = new Stimulus(160, 670, "▲");
+            s22 = new Stimulus(600, 400, "◼︎");
+            s23 = new Stimulus(700, 200, "▲");
+            s24 = new Stimulus(210, 500, "◼︎");
+            s25 = new Stimulus(40, 640, "▲");
+
+            triangleList.add(s1);
+            squareList.add(s2);
+            triangleList.add(s3);
+            squareList.add(s4);
+            triangleList.add(s5);
+            squareList.add(s6);
+            triangleList.add(s7);
+            squareList.add(s8);
+            triangleList.add(s9);
+            squareList.add(s10);
+            triangleList.add(s11);
+            squareList.add(s12);
+            triangleList.add(s13);
+            squareList.add(s14);
+            triangleList.add(s15);
+            squareList.add(s16);
+            triangleList.add(s17);
+            squareList.add(s18);
+            triangleList.add(s19);
+            squareList.add(s20);
+            triangleList.add(s21);
+            squareList.add(s22);
+            triangleList.add(s23);
+            squareList.add(s24);
+            triangleList.add(s25);
+        }
 
 
-
-        public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
 
@@ -104,1874 +161,306 @@ public class TMTTestS extends Activity {
                     if (event.getAction() == MotionEvent.ACTION_MOVE) {
 
                         if (idx == 0) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 0) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 1) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==1) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 2) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 2) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 3) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==3) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 4) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 4) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 5) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==5) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 6) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 6) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 7) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==7) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 8) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 8) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 9) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==9) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 10) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 10) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 11) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==11) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 12) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 12) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 13) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==13) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 14) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 14) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 15) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==15) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 16) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 16) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 17) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==17) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 18) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 18) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 19) {
-
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==19) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 20) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 20) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 21) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==21) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 22) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 22) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 23) {
-                            if (event.getX() >= 150 && event.getY() >= 340 && event.getX() <= 250 && event.getY() <= 440) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch14 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 40 && event.getX() <= 700 && event.getY() <= 140) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch15 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 50 && event.getX() <= 1800 && event.getY() <= 150) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch16 = 1;
-                            } else if (event.getX() >= 1170 && event.getY() >= 730 && event.getX() <= 1270 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch17 = 1;
-                            } else if (event.getX() >= 1540 && event.getY() >= 490 && event.getX() <= 1640 && event.getY() <= 590) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch18 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 300 && event.getX() <= 1500 && event.getY() <= 400) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch19 = 1;
-                            } else if (event.getX() >= 740 && event.getY() >= 640 && event.getX() <= 840 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch20 = 1;
-                            } else if (event.getX() >= 600 && event.getY() >= 400 && event.getX() <= 700 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch21 = 1;
-                            } else if (event.getX() >= 340 && event.getY() >= 600 && event.getX() <= 440 && event.getY() <= 700) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch22 = 1;
-                            } else if (event.getX() >= 100 && event.getY() >= 910 && event.getX() <= 200 && event.getY() <= 1010) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch23 = 1;
-                            } else if (event.getX() >= 580 && event.getY() >= 850 && event.getX() <= 680 && event.getY() <= 950) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch24 = 1;
-                            } else if (event.getX() >= 1100 && event.getY() >= 100 && event.getX() <= 1200 && event.getY() <= 200) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch25 = 1;
+                            for(int i = 0; i<squareList.size(); i++){
+                                if(idx==23) {
+                                    Stimulus temp = squareList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        squareList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         } else if (idx == 24) {
-                            if (event.getX() >= 100 && event.getY() >= 90 && event.getX() <= 200 && event.getY() <= 190) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch1 = 1;
-                            } else if (event.getX() >= 350 && event.getY() >= 400 && event.getX() <= 450 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch2 = 1;
-                            } else if (event.getX() >= 1400 && event.getY() >= 140 && event.getX() <= 1500 && event.getY() <= 240) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch3 = 1;
-                            } else if (event.getX() >= 1800 && event.getY() >= 530 && event.getX() <= 1900 && event.getY() <= 630) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch4 = 1;
-                            } else if (event.getX() >= 1050 && event.getY() >= 400 && event.getX() <= 1150 && event.getY() <= 500) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch5 = 1;
-                            } else if (event.getX() >= 1600 && event.getY() >= 200 && event.getX() <= 1700 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch6 = 1;
-                            } else if (event.getX() >= 890 && event.getY() >= 320 && event.getX() <= 1090 && event.getY() <= 420) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch7 = 1;
-                            } else if (event.getX() >= 900 && event.getY() >= 160 && event.getX() <= 1000 && event.getY() <= 260) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch8 = 1;
-                            } else if (event.getX() >= 700 && event.getY() >= 200 && event.getX() <= 800 && event.getY() <= 300) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch9 = 1;
-                            } else if (event.getX() >= 40 && event.getY() >= 640 && event.getX() <= 140 && event.getY() <= 740) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch10 = 1;
-                            } else if (event.getX() >= 540 && event.getY() >= 700 && event.getX() <= 640 && event.getY() <= 800) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch11 = 1;
-                            } else if (event.getX() >= 950 && event.getY() >= 680 && event.getX() <= 1050 && event.getY() <= 780) {
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch12 = 1;
-                            } else if (event.getX() >= 1700 && event.getY() >= 730 && event.getX() <= 1800 && event.getY() <= 830) {
-
-                                cfPoint.addAll(arPoint);
-                                arPoint.clear();
-                                idx += 1;
-                                ch13 = 1;
+                            for (int i = 0; i < triangleList.size(); i++) {
+                                if (idx == 24) {
+                                    Stimulus temp = triangleList.get(i);
+                                    if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                        changeLineType();
+                                        triangleList.remove(i);
+                                        checkPosition(idx, temp);
+                                        idx += 1;
+                                    }
+                                }
                             }
                         }
-
-
 
                         arPoint.add(new Point(event.getX(), event.getY(), true));
 
@@ -1986,21 +475,19 @@ public class TMTTestS extends Activity {
                             mTimer.cancel();
                             mTimer.purge();
                             end = new Date();
-                          //  mTimer.cancel();
                             time_s = end.getTime() - start.getTime();
                             Log.i("test", "diff s: " + time_s);
                             idx++;
                             capture();
-
-                           Toast.makeText(getApplicationContext(), "검사 메뉴로 이동합니다", Toast.LENGTH_SHORT).show();
-
                             saveResult();
+
+                            Toast.makeText(getApplicationContext(), "검사 메뉴로 이동합니다", Toast.LENGTH_SHORT).show();
 
                             final Handler handler = new Handler();
                             final Runnable r = new Runnable() {
                                 public void run() {
 
-                                    Intent intent = new Intent(TMTTestS.this, TMTPracticeNS.class);
+                                    Intent intent = new Intent(TMTTestS.this, TestSelection.class);
                                     intent.putExtra("id", id);
                                     intent.putExtra("savepath", savepath);
                                     intent.putExtra("tmtA", time_a);
@@ -2032,9 +519,82 @@ public class TMTTestS extends Activity {
                         }
 
                     }
-
-
                     return false;
+                }
+                private void changeLineType() {
+                    cfPoint.addAll(arPoint);
+                    arPoint.clear();
+                }
+
+                private void checkPosition(int idx, Stimulus temp) {
+                    String type = "";
+                    if((idx % 2) == 0){
+                        type = "triangle";
+                    }else if((idx % 2) == 1){
+                        type = "sqaure";
+                    }
+                    switch(type){
+                        case "triangle" :
+
+                            if(temp.equals(s1)){
+                                ch1 = 1;
+                            }else if(temp.equals(s3)){
+                                ch3 = 1;
+                            }else if(temp.equals(s5)){
+                                ch5 = 1;
+                            }else if(temp.equals(s7)){
+                                ch7 = 1;
+                            }else if(temp.equals(s9)){
+                                ch9 = 1;
+                            }else if(temp.equals(s11)){
+                                ch11 = 1;
+                            }else if(temp.equals(s13)){
+                                ch13 = 1;
+                            }else if(temp.equals(s15)){
+                                ch15 = 1;
+                            }else if(temp.equals(s17)){
+                                ch17 = 1;
+                            }else if(temp.equals(s19)){
+                                ch19 = 1;
+                            }else if(temp.equals(s21)){
+                                ch21 = 1;
+                            }else if(temp.equals(s23)){
+                                ch23 = 1;
+                            }else if(temp.equals(s25)){
+                                ch25 = 1;
+                            }
+                            break;
+
+                        case "sqaure":
+                            if(temp.equals(s2)){
+                                ch2 = 1;
+                            }else if(temp.equals(s4)){
+                                ch4 = 1;
+                            }else if(temp.equals(s6)){
+                                ch6 = 1;
+                            }else if(temp.equals(s8)){
+                                ch8 = 1;
+                            }else if(temp.equals(s10)){
+                                ch10 = 1;
+                            }else if(temp.equals(s12)){
+                                ch12 = 1;
+                            }else if(temp.equals(s14)){
+                                ch14 = 1;
+                            }else if(temp.equals(s16)){
+                                ch16 = 1;
+                            }else if(temp.equals(s18)){
+                                ch18 = 1;
+                            }else if(temp.equals(s20)){
+                                ch20 = 1;
+                            }else if(temp.equals(s22)){
+                                ch22 = 1;
+                            }else if(temp.equals(s24)){
+                                ch24 = 1;
+                            }
+                            break;
+
+                        default: break;
+                    }
                 }
             });
         }
@@ -2042,15 +602,11 @@ public class TMTTestS extends Activity {
     private void saveResult() {
 
             MakeFile mf = new MakeFile();
-            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt.txt");
+            File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_tmt_b.txt");
 
             tmt_sb = new StringBuilder("id");
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append(id);
-            tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append("TMT_A");
-            tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append(time_a);
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append("TMT_S");
             tmt_sb.append(System.getProperty("line.separator"));
@@ -2071,7 +627,7 @@ public class TMTTestS extends Activity {
         vm.setDrawingCacheEnabled(true);
             Bitmap b = vm.getDrawingCache();
             try {
-                b.compress(Bitmap.CompressFormat.JPEG, 95, new FileOutputStream(savepath + "/" + id + "_TMT_S.jpg"));
+                b.compress(Bitmap.CompressFormat.JPEG, 95, new FileOutputStream(savepath + "/" + id + "_TMT_B.jpg"));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -2110,20 +666,20 @@ public class TMTTestS extends Activity {
             }
         }
 
-        protected class MyView extends View{
+        protected class MyView extends View {
             Paint mPaint, cPaint, Pnt, Pnt1, textPaint, Pnt3;
             Canvas canvas;
 
-            public MyView(Context context){
+            public MyView(Context context) {
                 super(context);
 
 
-                mPaint=new Paint();
+                mPaint = new Paint();
                 mPaint.setColor(Color.LTGRAY);
                 mPaint.setStrokeWidth(3);
                 mPaint.setAntiAlias(true);
 
-                cPaint=new Paint();
+                cPaint = new Paint();
                 cPaint.setColor(Color.DKGRAY);
                 cPaint.setStrokeWidth(4);
                 cPaint.setAntiAlias(true);
@@ -2155,173 +711,176 @@ public class TMTTestS extends Activity {
 
             }
 
-            public void onDraw(Canvas canvas){
+            public void onDraw(Canvas canvas) {
                 this.canvas = canvas;
                 canvas.drawColor(Color.WHITE);
 //                canvas.drawColor(Color.TRANSPARENT);
-                drawNumberCircle(canvas, 100, 90, 200, 190, "▲");
-                drawNumberCircle(canvas, 150, 340, 250, 440, "◼︎");
-                drawNumberCircle(canvas, 350, 400, 450, 500, "▲");
-                drawNumberCircle(canvas, 600, 40, 700, 140, "◼︎");
-                drawNumberCircle(canvas, 1400, 140, 1500, 240, "▲");
+                drawShapeCircle(canvas, s1);
+                drawShapeCircle(canvas, s2);
+                drawShapeCircle(canvas, s3);
+                drawShapeCircle(canvas, s4);
+                drawShapeCircle(canvas, s5);
 
-                drawNumberCircle(canvas, 1700, 50, 1800, 150, "◼︎");
-                drawNumberCircle(canvas, 1800, 530, 1900, 630, "▲");
-                drawNumberCircle(canvas, 1170, 730, 1270, 830, "◼︎");
-                drawNumberCircle(canvas, 1050, 400, 1150, 500, "▲");
-                drawNumberCircle(canvas, 1540, 490, 1640, 590, "◼︎");
+                drawShapeCircle(canvas, s6);
+                drawShapeCircle(canvas, s7);
+                drawShapeCircle(canvas, s8);
+                drawShapeCircle(canvas, s9);
+                drawShapeCircle(canvas, s10);
 
-                drawNumberCircle(canvas, 1600, 200, 1700, 300, "▲");
-                drawNumberCircle(canvas, 1400, 300, 1500, 400, "◼︎");
-                drawNumberCircle(canvas, 890, 320, 990, 420, "▲");
-                drawNumberCircle(canvas, 740, 640, 840, 740, "◼︎");
-                drawNumberCircle(canvas, 900, 160, 1000, 260, "▲");
+                drawShapeCircle(canvas, s11);
+                drawShapeCircle(canvas, s12);
+                drawShapeCircle(canvas, s13);
+                drawShapeCircle(canvas, s14);
+                drawShapeCircle(canvas, s15);
 
-                drawNumberCircle(canvas, 600, 400, 700, 500, "◼︎");
-                drawNumberCircle(canvas, 700, 200, 800, 300, "▲");
-                drawNumberCircle(canvas, 340, 600, 440, 700, "◼︎");
-                drawNumberCircle(canvas, 40, 640, 140, 740, "▲");
-                drawNumberCircle(canvas, 100, 910, 200, 1010, "◼︎");
+                drawShapeCircle(canvas, s16);
+                drawShapeCircle(canvas, s17);
+                drawShapeCircle(canvas, s18);
+                drawShapeCircle(canvas, s19);
+                drawShapeCircle(canvas, s20);
 
-                drawNumberCircle(canvas, 540, 700, 640, 800, "▲");
-                drawNumberCircle(canvas, 580, 850, 680, 950, "◼︎");
-                drawNumberCircle(canvas, 950, 680, 1050, 780, "▲");
-                drawNumberCircle(canvas, 1100, 100, 1200, 200, "◼︎");
-                drawNumberCircle(canvas, 1700, 730, 1800, 830, "▲");
+                drawShapeCircle(canvas, s21);
+                drawShapeCircle(canvas, s22);
+                drawShapeCircle(canvas, s23);
+                drawShapeCircle(canvas, s24);
+                drawShapeCircle(canvas, s25);
                 drawText(canvas);
 
-                if(ch1 ==1){
-                    drawCorrectCircle(100, 90);
+                if (ch1 == 1) {
+                    drawCorrectCircle(s1);
                 }
-                if(ch2==1){
-                    drawCorrectCircle(350, 400);
+                if (ch2 == 1) {
+                    drawCorrectCircle(s2);
                 }
-                if(ch3==1){
-                    drawCorrectCircle(1400, 140);
+                if (ch3 == 1) {
+                    drawCorrectCircle(s3);
                 }
-                if(ch4==1){
-                    drawCorrectCircle(1800, 530);
+                if (ch4 == 1) {
+                    drawCorrectCircle(s4);
                 }
-                if(ch5==1){
-                    drawCorrectCircle(1050, 400);
+                if (ch5 == 1) {
+                    drawCorrectCircle(s5);
                 }
-                if(ch6==1){
-                    drawCorrectCircle(1600, 200);
+                if (ch6 == 1) {
+                    drawCorrectCircle(s6);
                 }
-                if(ch7==1){
-                    drawCorrectCircle(890, 320);
+                if (ch7 == 1) {
+                    drawCorrectCircle(s7);
                 }
-                if(ch8==1){
-                    drawCorrectCircle(900, 160);
+                if (ch8 == 1) {
+                    drawCorrectCircle(s8);
                 }
-                if(ch9==1){
-                    drawCorrectCircle(700, 200);
+                if (ch9 == 1) {
+                    drawCorrectCircle(s9);
                 }
-                if(ch10==1){
-                    drawCorrectCircle(40, 640);
+                if (ch10 == 1) {
+                    drawCorrectCircle(s10);
                 }
-                if(ch11==1){
-                    drawCorrectCircle(540, 700);
+                if (ch11 == 1) {
+                    drawCorrectCircle(s11);
                 }
-                if(ch12==1){
-                    drawCorrectCircle(950, 680);
-                }
-
-                if(ch13==1){
-                    drawCorrectCircle(1700, 730);
-                }
-                if(ch14==1){
-                    drawCorrectCircle(150, 340);
-                }
-                if(ch15==1){
-                    drawCorrectCircle(600, 40);
-                }
-                if(ch16==1){
-                    drawCorrectCircle(1700, 50);
-                }
-                if(ch17==1){
-                    drawCorrectCircle(1170, 730);
-                }
-                if(ch18==1){
-                    drawCorrectCircle(1540, 490);
+                if (ch12 == 1) {
+                    drawCorrectCircle(s12);
                 }
 
-                if(ch19==1){
-                    drawCorrectCircle(1400, 300);
+                if (ch13 == 1) {
+                    drawCorrectCircle(s13);
                 }
-                if(ch20==1){
-                    drawCorrectCircle(740, 640);
+                if (ch14 == 1) {
+                    drawCorrectCircle(s14);
                 }
-                if(ch21==1){
-                    drawCorrectCircle(600, 400);
+                if (ch15 == 1) {
+                    drawCorrectCircle(s15);
                 }
-                if(ch22==1){
-                    drawCorrectCircle(340, 600);
+                if (ch16 == 1) {
+                    drawCorrectCircle(s16);
                 }
-                if(ch23==1){
-                    drawCorrectCircle(100, 910);
+                if (ch17 == 1) {
+                    drawCorrectCircle(s17);
                 }
-                if(ch24==1){
-                    drawCorrectCircle(580, 850);
+                if (ch18 == 1) {
+                    drawCorrectCircle(s18);
                 }
-                if(ch25==1){
-                    drawCorrectCircle(1100, 100);
+
+                if (ch19 == 1) {
+                    drawCorrectCircle(s19);
+                }
+                if (ch20 == 1) {
+                    drawCorrectCircle(s20);
+                }
+                if (ch21 == 1) {
+                    drawCorrectCircle(s21);
+                }
+                if (ch22 == 1) {
+                    drawCorrectCircle(s22);
+                }
+                if (ch23 == 1) {
+                    drawCorrectCircle(s23);
+                }
+                if (ch24 == 1) {
+                    drawCorrectCircle(s24);
+                }
+                if (ch25 == 1) {
+                    drawCorrectCircle(s25);
                 }
 
 
-                for(int i=0; i<cfPoint.size(); i++){
-                    if(cfPoint.get(i).Draw){
-                        canvas.drawLine(cfPoint.get(i-1).x, cfPoint.get(i-1).y,
+                for (int i = 0; i < cfPoint.size(); i++) {
+                    if (cfPoint.get(i).Draw) {
+                        canvas.drawLine(cfPoint.get(i - 1).x, cfPoint.get(i - 1).y,
                                 cfPoint.get(i).x, cfPoint.get(i).y, cPaint);
                     }
                 }
-                for(int i=1; i<arPoint.size(); i++){
-                    if(arPoint.get(i).Draw){
-                        canvas.drawLine(arPoint.get(i-1).x, arPoint.get(i-1).y,
+                for (int i = 1; i < arPoint.size(); i++) {
+                    if (arPoint.get(i).Draw) {
+                        canvas.drawLine(arPoint.get(i - 1).x, arPoint.get(i - 1).y,
                                 arPoint.get(i).x, arPoint.get(i).y, mPaint);
                     }
                 }
 
             }
 
-            private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
-                RectF basicRec = new RectF(a, b, c, d);
+
+            private void drawShapeCircle(Canvas canvas, Stimulus stimulus) {
+                int x = stimulus.getX();
+                int y = stimulus.getY();
+                String str = stimulus.getStr();
+
+                RectF basicRec = new RectF(x, y, x + 70, y + 70);
                 canvas.drawRoundRect(basicRec, 50, 50, Pnt);
-                if(str.equals("▲")){
-                    canvas.drawText(str, (a + c) / 2 - 25, (b + d) / 2 + 35, Pnt1);
-                }else if(str.equals("◼︎")){
-                    canvas.drawText(str, (a + c) / 2 - 28, (b + d) / 2 + 17, Pnt);
+                if (str.equals("▲")) {
+                    canvas.drawText(str, (x + x + 70) / 2 - 25, (y + y + 70) / 2 + 35, Pnt1);
+                } else if (str.equals("◼︎")) {
+                    canvas.drawText(str, (x + x + 70) / 2 - 28, (y + y + 70) / 2 + 17, Pnt);
                 }
+
             }
 
-
-            private void drawCorrectCircle(int a, int b){
-
-                RectF basicRec = new RectF(a, b, a+100, b+100);
+            private void drawCorrectCircle(Stimulus stimulus) {
+                int x = stimulus.getX();
+                int y = stimulus.getY();
+                RectF basicRec = new RectF(x, y, x + 70, y + 70);
                 canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
             }
 
 
-            private void drawText(Canvas canvas){
+            private void drawText(Canvas canvas) {
+                canvas.drawText("시작", s1.getX() + 13, s1.getY() + 100, textPaint);
+                canvas.drawText("끝", s25.getX() + 20, s6.getY() + 100, textPaint);
+            }
+        }
 
-                canvas.drawText("시작", 130, 220, textPaint);
-                canvas.drawText("끝", 1730, 860, textPaint);
-
+        public static File makeDirectory(String dir_path){
+            File dir = new File(dir_path);
+            if (!dir.exists())
+            {
+                dir.mkdirs();
+                Log.i("test", "!dir.exists");
+            }else{
+                Log.i("test" , "dir.exists" );
             }
 
-
+            return dir;
         }
-    public static File makeDirectory(String dir_path){
-        File dir = new File(dir_path);
-        if (!dir.exists())
-        {
-            dir.mkdirs();
-            Log.i("test", "!dir.exists");
-        }else{
-            Log.i("test" , "dir.exists" );
-        }
-
-        return dir;
-    }
     }
 
