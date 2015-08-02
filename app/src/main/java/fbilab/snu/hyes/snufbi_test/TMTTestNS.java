@@ -170,7 +170,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 2){
                             if(event.getX() >= s3.getX() && event.getY() >= s3.getY() && event.getX() <= s3.getX() + 70 && event.getY() <= s3.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch3 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 3){//square
@@ -188,7 +188,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 4){
                             if(event.getX() >= s5.getX() && event.getY() >= s5.getY() && event.getX() <= s5.getX() + 70 && event.getY() <= s5.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch5 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 5){
@@ -206,7 +206,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 6){
                             if(event.getX() >= s7.getX() && event.getY() >= s7.getY() && event.getX() <= s7.getX() + 70 && event.getY() <= s7.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch7 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 7){
@@ -224,7 +224,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 8){
                             if(event.getX() >= s9.getX() && event.getY() >= s9.getY() && event.getX() <= s9.getX() + 70 && event.getY() <= s9.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch9 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 9){
@@ -242,7 +242,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 10){
                             if(event.getX() >= s11.getX() && event.getY() >= s11.getY() && event.getX() <= s11.getX() + 70 && event.getY() <= s11.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch11 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 11){
@@ -260,7 +260,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 12){
                             if(event.getX() >= s13.getX() && event.getY() >= s13.getY() && event.getX() <= s13.getX() + 70 && event.getY() <= s13.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch13 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 13){
@@ -278,7 +278,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 14){
                             if(event.getX() >= s15.getX() && event.getY() >= s15.getY() && event.getX() <= s15.getX() + 70 && event.getY() <= s15.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch15 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 15){
@@ -296,7 +296,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 16){
                             if(event.getX() >= s17.getX() && event.getY() >= s17.getY() && event.getX() <= s17.getX() + 70 && event.getY() <= s17.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch17 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 17){
@@ -314,7 +314,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 18){
                             if(event.getX() >= s19.getX() && event.getY() >= s19.getY() && event.getX() <= s19.getX() + 70 && event.getY() <= s19.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch19 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 19){
@@ -332,7 +332,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 20){
                             if(event.getX() >= s21.getX() && event.getY() >= s21.getY() && event.getX() <= s21.getX() + 70 && event.getY() <= s21.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch21 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 21){
@@ -350,7 +350,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 22){
                             if(event.getX() >= s23.getX() && event.getY() >= s23.getY() && event.getX() <= s23.getX() + 70 && event.getY() <= s23.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch23 = 1;
                                 changeLineType();
                             }
                         }else if(idx == 23){
@@ -368,7 +368,7 @@ public class TMTTestNS extends Activity {
                         }else if(idx == 24){
                             if(event.getX() >= s25.getX() && event.getY() >= s25.getY() && event.getX() <= s25.getX() + 70 && event.getY() <= s25.getY() + 70){
                                 idx += 1;
-                                ch1 = 1;
+                                ch25 = 1;
                                 changeLineType();
                             }
                         }
@@ -423,14 +423,47 @@ public class TMTTestNS extends Activity {
 
                 private void checkPosition(int idx, Stimulus temp) {
                     String type = "";
-                    if ((idx % 2) == 0 && (idx %4) != 0) {
+                    if ((idx % 4) == 1){
                         type = "triangle";
-                    } else if ((idx % 4) == 0) {
+                    }else if((idx % 4) == 3){
                         type = "sqaure";
+                    }else if((idx % 2) == 0){
+                        type = "number";
                     }
                     switch (type) {
                         case "triangle":
 
+                            if (temp.equals(s2)) {
+                                ch2 = 1;
+                            } else if (temp.equals(s6)) {
+                                ch6 = 1;
+                            } else if (temp.equals(s10)) {
+                                ch10 = 1;
+                            } else if (temp.equals(s14)) {
+                                ch14 = 1;
+                            } else if (temp.equals(s18)) {
+                                ch18 = 1;
+                            } else if (temp.equals(s22)) {
+                                ch22 = 1;
+                            }
+                            break;
+
+                        case "sqaure":
+                            if (temp.equals(s4)) {
+                                ch4 = 1;
+                            } else if (temp.equals(s8)) {
+                                ch8 = 1;
+                            } else if (temp.equals(s12)) {
+                                ch12 = 1;
+                            } else if (temp.equals(s16)) {
+                                ch16 = 1;
+                            } else if (temp.equals(s20)) {
+                                ch20 = 1;
+                            } else if (temp.equals(s24)) {
+                                ch24 = 1;
+                            }
+                            break;
+                        case "number":
                             if (temp.equals(s1)) {
                                 ch1 = 1;
                             } else if (temp.equals(s3)) {
@@ -443,7 +476,7 @@ public class TMTTestNS extends Activity {
                                 ch9 = 1;
                             } else if (temp.equals(s11)) {
                                 ch11 = 1;
-                            } else if (temp.equals(s13)) {
+                            }else if (temp.equals(s13)) {
                                 ch13 = 1;
                             } else if (temp.equals(s15)) {
                                 ch15 = 1;
@@ -453,38 +486,10 @@ public class TMTTestNS extends Activity {
                                 ch19 = 1;
                             } else if (temp.equals(s21)) {
                                 ch21 = 1;
-                            } else if (temp.equals(s23)) {
+                            }else if (temp.equals(s23)) {
                                 ch23 = 1;
                             } else if (temp.equals(s25)) {
                                 ch25 = 1;
-                            }
-                            break;
-
-                        case "sqaure":
-                            if (temp.equals(s2)) {
-                                ch2 = 1;
-                            } else if (temp.equals(s4)) {
-                                ch4 = 1;
-                            } else if (temp.equals(s6)) {
-                                ch6 = 1;
-                            } else if (temp.equals(s8)) {
-                                ch8 = 1;
-                            } else if (temp.equals(s10)) {
-                                ch10 = 1;
-                            } else if (temp.equals(s12)) {
-                                ch12 = 1;
-                            } else if (temp.equals(s14)) {
-                                ch14 = 1;
-                            } else if (temp.equals(s16)) {
-                                ch16 = 1;
-                            } else if (temp.equals(s18)) {
-                                ch18 = 1;
-                            } else if (temp.equals(s20)) {
-                                ch20 = 1;
-                            } else if (temp.equals(s22)) {
-                                ch22 = 1;
-                            } else if (temp.equals(s24)) {
-                                ch24 = 1;
                             }
                             break;
 

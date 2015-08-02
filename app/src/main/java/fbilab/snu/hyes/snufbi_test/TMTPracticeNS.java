@@ -110,7 +110,7 @@ public class TMTPracticeNS extends Activity {
                     }else if(idx == 2){
                         if(event.getX() >= s3.getX() && event.getY() >= s3.getY() && event.getX() <= s3.getX() + 70 && event.getY() <= s3.getY() + 70){
                             idx += 1;
-                            ch1 = true;
+                            ch3 = true;
                             changeLineType();
                         }
                     }else if(idx == 3){//square
@@ -128,7 +128,7 @@ public class TMTPracticeNS extends Activity {
                     }else if(idx == 4){
                         if(event.getX() >= s5.getX() && event.getY() >= s5.getY() && event.getX() <= s5.getX() + 70 && event.getY() <= s5.getY() + 70){
                             idx += 1;
-                            ch1 = true;
+                            ch5 = true;
                             changeLineType();
                         }
                     }else if(idx == 5){
@@ -187,12 +187,21 @@ public class TMTPracticeNS extends Activity {
 
             private void checkPosition(int idx, Stimulus temp) {
                 String type = "";
-                if ((idx % 2) == 0 && (idx % 4) != 0) {
+                if ((idx % 4) == 1){
                     type = "triangle";
-                } else if ((idx % 4) == 0) {
+                }
+                if((idx % 4) == 3) {
                     type = "sqaure";
                 }
-                switch (type) {
+
+//                if ((idx % 2) == 0 && (idx % 4) != 0) {
+//                    type = "triangle";
+//                } else if ((idx % 4) == 0) {
+//                    type = "sqaure";
+//                }
+
+//                0(tntwk) 1삼각 2숫자 3네모 4숫자 5삼각 6숫자 7네모 8숫자 9넵모넵모
+              switch (type) {
                     case "triangle":
 
                         if (temp.equals(s2)) {
@@ -207,6 +216,7 @@ public class TMTPracticeNS extends Activity {
                             ch4 = true;
                         }
                         break;
+
 
                     default:
                         break;
