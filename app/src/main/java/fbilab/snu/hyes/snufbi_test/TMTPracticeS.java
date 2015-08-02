@@ -236,6 +236,11 @@ public class TMTPracticeS extends Activity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(TMTPracticeS.this, TestSelection.class);
+        intent.putExtra("id", id);
+        intent.putExtra("savepath", savepath);
+        startActivity(intent);
     }
 
     public class Point{

@@ -47,31 +47,31 @@ public class TMTTestS extends Activity {
         private static final ArrayList<Stimulus> squareList = new ArrayList<Stimulus>();
 
         {
-            s1 = new Stimulus(470, 400, "▲");
-            s2 = new Stimulus(890, 370, "◼︎");
-            s3 = new Stimulus(1000, 580, "▲");
-            s4 = new Stimulus(700, 540, "◼︎");
+            s1 = new Stimulus(100, 90, "▲");
+            s2 = new Stimulus(890, 460, "◼︎");
+            s3 = new Stimulus(1000, 480, "▲");
+            s4 = new Stimulus(690, 540, "◼︎");
             s5 = new Stimulus(940, 200, "▲");
             s6 = new Stimulus(780, 320, "◼︎");
-            s7 = new Stimulus(100, 90, "▲");
-            s8 = new Stimulus(150, 340, "◼︎");
-            s9 = new Stimulus(350, 400, "▲");
-            s10 = new Stimulus(600, 40, "◼︎");
-            s11 = new Stimulus(1100, 140, "▲");
-            s12 = new Stimulus(685, 50, "◼︎");
-            s13 = new Stimulus(180, 530, "▲");
-            s14 = new Stimulus(1080, 630, "◼︎");
-            s15 = new Stimulus(1050, 400, "▲");
+            s7 = new Stimulus(470, 410, "▲");
+            s8 = new Stimulus(250, 340, "◼︎");
+            s9 = new Stimulus(350, 200, "▲");
+            s10 = new Stimulus(1060, 40, "◼︎");
+            s11 = new Stimulus(1200, 140, "▲");
+            s12 = new Stimulus(535, 50, "◼︎");
+            s13 = new Stimulus(402, 340, "▲");
+            s14 = new Stimulus(1080, 660, "◼︎");
+            s15 = new Stimulus(810, 640, "▲");
             s16 = new Stimulus(540, 590, "◼︎");
-            s17 = new Stimulus(160, 200, "▲");
-            s18 = new Stimulus(340, 400, "◼︎");
+            s17 = new Stimulus(160, 220, "▲");
+            s18 = new Stimulus(120, 420, "◼︎");
             s19 = new Stimulus(890, 320, "▲");
-            s20 = new Stimulus(740, 640, "◼︎");
-            s21 = new Stimulus(160, 670, "▲");
-            s22 = new Stimulus(600, 400, "◼︎");
-            s23 = new Stimulus(700, 200, "▲");
-            s24 = new Stimulus(210, 500, "◼︎");
-            s25 = new Stimulus(40, 640, "▲");
+            s20 = new Stimulus(1050, 350, "◼︎");
+            s21 = new Stimulus(50, 650, "▲");
+            s22 = new Stimulus(600, 300, "◼︎");
+            s23 = new Stimulus(700, 190, "▲");
+            s24 = new Stimulus(320, 580, "◼︎");
+            s25 = new Stimulus(1150, 540, "▲");
 
             triangleList.add(s1);
             squareList.add(s2);
@@ -138,7 +138,6 @@ public class TMTTestS extends Activity {
                             public void run() {
                                 time_s = 300000;
                                 capture();
-                                saveResult();
 
                                 Intent intent = new Intent(TMTTestS.this, TestSelection.class);
                                 intent.putExtra("id", id);
@@ -608,7 +607,7 @@ public class TMTTestS extends Activity {
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append(id);
             tmt_sb.append(System.getProperty("line.separator"));
-            tmt_sb.append("TMT_S");
+            tmt_sb.append("TMT_B");
             tmt_sb.append(System.getProperty("line.separator"));
             tmt_sb.append(time_s);
             tmt_sb.append(System.getProperty("line.separator"));
@@ -633,13 +632,26 @@ public class TMTTestS extends Activity {
             }
         }
 
-//    @Override
-//    protected void onDestroy() {
-//        Log.i("test", "s onDstory()");
-//        mTimer.cancel();
-//        mTimer.purge();
-//        super.onDestroy();
-//    }
+        @Override
+        protected void onStop() {
+            super.onStop();
+            Log.i("test", "B onStop()");
+            if(mTimer !=null) {
+                Log.i("test", "B timer stop()");
+                mTimer.cancel();
+                mTimer.purge();
+            }
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            Log.i("test", "B onDstory()");
+            if(mTimer !=null) {
+                mTimer.cancel();
+                mTimer.purge();
+            }
+        }
 
         @Override
         public void onBackPressed() {
@@ -866,7 +878,7 @@ public class TMTTestS extends Activity {
 
             private void drawText(Canvas canvas) {
                 canvas.drawText("시작", s1.getX() + 13, s1.getY() + 100, textPaint);
-                canvas.drawText("끝", s25.getX() + 20, s6.getY() + 100, textPaint);
+                canvas.drawText("끝", s25.getX() + 20, s25.getY() + 100, textPaint);
             }
         }
 

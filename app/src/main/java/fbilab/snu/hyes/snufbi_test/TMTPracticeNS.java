@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -31,7 +30,24 @@ public class TMTPracticeNS extends Activity {
     int idx = 0;
     Date start, end;
     long time_a, time_s;
-    boolean ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15, ch16, ch17, ch18, ch19, ch20, ch21, ch22, ch23, ch24, ch25;
+    boolean ch1, ch2, ch3, ch4, ch5, ch6;
+    private Stimulus s1, s2, s3, s4, s5, s6;
+    private static final ArrayList<Stimulus> triangleList = new ArrayList<Stimulus>();
+    private static final ArrayList<Stimulus> squareList = new ArrayList<Stimulus>();
+
+    {
+        s1 = new Stimulus(300, 420, "1");
+        s2 = new Stimulus(170, 500, "▲");
+        s3 = new Stimulus(150, 630, "2");
+        s4 = new Stimulus(540, 530, "◼︎");
+        s5 = new Stimulus(610, 671, "3");
+        s6 = new Stimulus(700, 420, "▲");
+
+        triangleList.add(s2);
+        squareList.add(s4);
+        triangleList.add(s6);
+
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +55,10 @@ public class TMTPracticeNS extends Activity {
         Intent intent = getIntent();
         savepath = intent.getStringExtra("savepath");
         id = intent.getStringExtra("id");
-        time_a = intent.getLongExtra("tmtA", 0);
-        Log.i("test", "a: "+time_a);
-        time_s = intent.getLongExtra("tmtS", 0);
-        Log.i("test", "s: "+time_s);
+//        time_a = intent.getLongExtra("tmtA", 0);
+//        Log.i("test", "a: "+time_a);
+//        time_s = intent.getLongExtra("tmtS", 0);
+//        Log.i("test", "s: "+time_s);
         vm = new MyView(this);
       //  my = new MyView(getApplicationContext());
 
@@ -73,71 +89,59 @@ public class TMTPracticeNS extends Activity {
                 if(event.getAction()==MotionEvent.ACTION_MOVE)
                 {
 
-                    if(idx == 0){
-                        if(event.getX() >= 1000 && event.getY() >= 400 && event.getX() <= 1100 && event.getY() <= 500){
-
-                            vm.drawCorrectCircle(1000, 400, 1100, 500, "1");
+                    if(idx == 0 ){
+                        if(event.getX() >= s1.getX() && event.getY() >= s1.getY() && event.getX() <= s1.getX() + 70 && event.getY() <= s1.getY() + 70){
+                            idx += 1;
                             ch1 = true;
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
+                            changeLineType();
                         }
-                    }else if(idx == 1){
-                        if(event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500){
-                            vm.drawCorrectCircle(670, 400, 770, 500, "▲");
-                            ch2 = true;
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                        }else if(event.getX() >= 1080 && event.getY() >= 650 && event.getX() <= 1180 && event.getY() <= 750){
-                            vm.drawCorrectCircle(1080, 650, 1180, 750, "▲");
-                            ch3 = true;
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
+                    }else if(idx ==1){//triangle
+                        for (int i = 0; i < triangleList.size(); i++) {
+                            if (idx == 1) {
+                                Stimulus temp = triangleList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
+                                    triangleList.remove(i);
+                                    checkPosition(idx, temp);
+                                    idx += 1;
+                                }
+                            }
                         }
                     }else if(idx == 2){
-                        if(event.getX() >= 840 && event.getY() >= 600 && event.getX() <= 940 && event.getY() <= 700){
-                            vm.drawCorrectCircle(840, 600, 940, 700, "2");
-                            ch4 = true;
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
+                        if(event.getX() >= s3.getX() && event.getY() >= s3.getY() && event.getX() <= s3.getX() + 70 && event.getY() <= s3.getY() + 70){
                             idx += 1;
+                            ch1 = true;
+                            changeLineType();
                         }
-                    }else if(idx == 3){
-                        if(event.getX() >= 1280 && event.getY() >= 540 && event.getX() <= 1380 && event.getY() <= 640){
-                            vm.drawCorrectCircle(1280, 540, 1380, 640, "◼︎");
-                            ch5 =true;
-
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
+                    }else if(idx == 3){//square
+                        for(int i = 0; i<squareList.size(); i++){
+                            if(idx==3) {
+                                Stimulus temp = squareList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
+                                    squareList.remove(i);
+                                    checkPosition(idx, temp);
+                                    idx += 1;
+                                }
+                            }
                         }
                     }else if(idx == 4){
-                        if(event.getX() >= 890 && event.getY() >= 240 && event.getX() <= 990 && event.getY() <= 340){
-                            vm.drawCorrectCircle(890, 240, 990, 340, "3");
-                            ch6 =true;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
+                        if(event.getX() >= s5.getX() && event.getY() >= s5.getY() && event.getX() <= s5.getX() + 70 && event.getY() <= s5.getY() + 70){
                             idx += 1;
+                            ch1 = true;
+                            changeLineType();
                         }
                     }else if(idx == 5){
-                        if(event.getX() >= 670 && event.getY() >= 400 && event.getX() <= 770 && event.getY() <= 500){
-                            vm.drawCorrectCircle(670, 400, 770, 500, "▲");
-                            ch2 = true;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
-                        }else if(event.getX() >= 1080 && event.getY() >= 650 && event.getX() <= 1180 && event.getY() <= 750){
-                            vm.drawCorrectCircle(1080, 650, 1180, 750, "▲");
-                            ch3 = true;
-                            cfPoint.addAll(arPoint);
-                            arPoint.clear();
-                            idx += 1;
+                        for (int i = 0; i < triangleList.size(); i++) {
+                            if (idx == 5) {
+                                Stimulus temp = triangleList.get(i);
+                                if (event.getX() > temp.getX() && event.getX() < temp.getX() + 70 && event.getY() > temp.getY() && event.getY() < temp.getY() + 70) {
+                                    changeLineType();
+                                    triangleList.remove(i);
+                                    checkPosition(idx, temp);
+                                    idx += 1;
+                                }
+                            }
                         }
                     }
 
@@ -163,8 +167,6 @@ public class TMTPracticeNS extends Activity {
                                 Intent intent = new Intent(TMTPracticeNS.this, TMTTestNS.class);
                                 intent.putExtra("id", id);
                                 intent.putExtra("savepath", savepath);
-                                intent.putExtra("tmtA", time_a );
-                                intent.putExtra("tmtS", time_s );
                                 startActivity(intent);
                             }
                         };
@@ -178,6 +180,38 @@ public class TMTPracticeNS extends Activity {
 
                 return false;
             }
+            private void changeLineType() {
+                cfPoint.addAll(arPoint);
+                arPoint.clear();
+            }
+
+            private void checkPosition(int idx, Stimulus temp) {
+                String type = "";
+                if ((idx % 2) == 0 && (idx % 4) != 0) {
+                    type = "triangle";
+                } else if ((idx % 4) == 0) {
+                    type = "sqaure";
+                }
+                switch (type) {
+                    case "triangle":
+
+                        if (temp.equals(s2)) {
+                            ch2 = true;
+                        } else if (temp.equals(s6)) {
+                            ch6 = true;
+                        }
+                        break;
+
+                    case "sqaure":
+                        if (temp.equals(s4)) {
+                            ch4 = true;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         });
 
 
@@ -185,6 +219,11 @@ public class TMTPracticeNS extends Activity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(TMTPracticeNS.this, TestSelection.class);
+        intent.putExtra("id", id);
+        intent.putExtra("savepath", savepath);
+        startActivity(intent);
 
     }
 
@@ -257,33 +296,32 @@ public class TMTPracticeNS extends Activity {
             this.canvas = canvas;
             canvas.drawColor(Color.TRANSPARENT);
 
-            drawNumberCircle(canvas, 1000, 400, 1100, 500, "1︎");
-            drawShapeCircle(canvas, 670, 400, 770, 500, "▲");
-            drawNumberCircle(canvas, 840, 600, 940, 700, "2");
-            drawShapeCircle(canvas, 1280, 540, 1380, 640, "◼︎");
-            drawNumberCircle(canvas, 890, 240, 990, 340, "3");
-            drawShapeCircle(canvas, 1080, 650, 1180, 750, "▲");
+            drawNumberCircle(canvas, s1);
+            drawShapeCircle(canvas, s2);
+            drawNumberCircle(canvas, s3);
+            drawShapeCircle(canvas, s4);
+            drawNumberCircle(canvas, s5);
+            drawShapeCircle(canvas, s6);
 
 
 
             if (ch1 == true) {
-                drawCorrectCircle(1000, 400, 1100, 500, "1");
+                drawCorrectCircle(s1);
             }
             if (ch2 == true){
-                drawCorrectCircle(670, 400, 770, 500, "▲");
+                drawCorrectCircle(s2);
             }
             if (ch3 == true){
-                drawCorrectCircle(1080, 650, 1180, 750, "▲");
+                drawCorrectCircle(s3);
             }
             if (ch4 == true){
-                drawCorrectCircle(840, 600, 940, 700, "2");
+                drawCorrectCircle(s4);
             }
             if (ch5 == true){
-                drawCorrectCircle(1280, 540, 1380, 640, "◼︎");
-
+                drawCorrectCircle(s5);
             }
             if (ch6 == true){
-                drawCorrectCircle(890, 240, 990, 340, "3");
+                drawCorrectCircle(s6);
             }
 
             drawText(canvas);
@@ -304,48 +342,50 @@ public class TMTPracticeNS extends Activity {
 
         }
 
-        private void drawShapeCircle(Canvas canvas, int a, int b, int c, int d, String str){
+        private void drawNumberCircle(Canvas canvas, Stimulus stimulus){
 
-            RectF basicRec = new RectF(a, b, c, d);
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            String str = stimulus.getStr();
+            RectF basicRec = new RectF(x, y, x + 70, y+70);
             canvas.drawRoundRect(basicRec, 50, 50, Pnt);
-            if(str.equals("▲")){
-                canvas.drawText(str, (a + c) / 2 - 25, (b + d) / 2 + 35, Pnt1);
-            }else if(str.equals("◼︎")){
-                canvas.drawText(str, (a + c) / 2 - 28, (b + d) / 2 + 17, Pnt);
-            }
-
-        }
-
-        private void drawNumberCircle(Canvas canvas, int a, int b, int c, int d, String str){
-
-            RectF basicRec = new RectF(a, b, c, d);
-            canvas.drawRoundRect(basicRec, 50, 50, Pnt2);
             if(str.length() == 1) {
-                canvas.drawText(str, (a + c) / 2 - 5, (b + d) / 2 + 15, Pnt2);
+                canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 10, (y + y+70) / 2 + 15, Pnt2);
             }else{
-                canvas.drawText(str, (a + c) / 2 - 20, (b + d) / 2 + 15, Pnt2);
+                canvas.drawText(stimulus.getStr(), (x + x+70) / 2 - 20, (y + y+70) / 2 + 15, Pnt2);
             }
         }
 
+        private void drawShapeCircle(Canvas canvas, Stimulus stimulus) {
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            String str = stimulus.getStr();
 
-        private void drawCorrectCircle(int a, int b, int c, int d, String str){
+            RectF basicRec = new RectF(x, y, x + 70, y + 70);
+            canvas.drawRoundRect(basicRec, 50, 50, Pnt);
+            if (str.equals("▲")) {
+                canvas.drawText(str, (x + x + 70) / 2 - 25, (y + y + 70) / 2 + 35, Pnt1);
+            } else if (str.equals("◼︎")) {
+                canvas.drawText(str, (x + x + 70) / 2 - 28, (y + y + 70) / 2 + 17, Pnt);
+            }
 
-            RectF basicRec = new RectF(a, b, c, d);
-                canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
         }
 
-        private void drawText(Canvas canvas){
+        private void drawCorrectCircle(Stimulus stimulus) {
+            int x = stimulus.getX();
+            int y = stimulus.getY();
+            RectF basicRec = new RectF(x, y, x + 70, y + 70);
+            canvas.drawRoundRect(basicRec, 50, 50, Pnt3);
+        }
 
-            canvas.drawText("시작", 1030, 530, textPaint);
-            canvas.drawText("끝", 1120, 780, textPaint);
 
-
+        private void drawText(Canvas canvas) {
             canvas.drawText("숫자와 세모(▲), 네모(◼)︎ 두가지 모양이 있습니다.", 200, 200, textPaint);
             canvas.drawText("숫자와 두가지 모양을 번갈아가면서 ", 200, 250, textPaint);
             canvas.drawText("(1 - 세모 - 2 - 네모 - 3 ...) ", 200, 300, textPaint);
             canvas.drawText("위와 같은 순서로 가능한 빨리 선을 그어주세요.", 200, 350, textPaint);
+            canvas.drawText("시작", s1.getX() + 13, s1.getY() + 100, textPaint);
+            canvas.drawText("끝", s6.getX() + 20, s6.getY() + 100, textPaint);
         }
-
-
     }
 }

@@ -59,7 +59,7 @@ public class TMTTestA extends Activity {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT);
-//        vm.setAlpha((float) 0.5);
+
             win.addContentView(vm, params);
 
             arPoint=new ArrayList<Point>();
@@ -83,7 +83,7 @@ public class TMTTestA extends Activity {
                             public void run() {
                                 time_a = 300000;
                                 capture();
-                                saveResult();
+
 
                                 Intent intent = new Intent(TMTTestA.this, TestSelection.class);
                                 intent.putExtra("id", id);
@@ -383,12 +383,26 @@ public class TMTTestA extends Activity {
             }
         }
 
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("test", "A onStop()");
+        if(mTimer !=null) {
+            Log.i("test", "A timer stop()");
+            mTimer.cancel();
+            mTimer.purge();
+        }
+    }
+
     @Override
     protected void onDestroy() {
-        Log.i("test", "a onDstory()");
-        mTimer.cancel();
-        mTimer.purge();
         super.onDestroy();
+        Log.i("test", "a onDstory()");
+        if(mTimer !=null) {
+            mTimer.cancel();
+            mTimer.purge();
+        }
     }
 
     @Override
