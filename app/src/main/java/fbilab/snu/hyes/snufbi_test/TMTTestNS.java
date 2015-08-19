@@ -811,5 +811,5 @@ public class TMTTestNS extends Activity {
 
         return dir;
     }
-    }
+}
 

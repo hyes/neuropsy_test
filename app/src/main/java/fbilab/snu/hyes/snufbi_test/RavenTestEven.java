@@ -4434,6 +4434,8 @@ public class RavenTestEven extends ActionBarActivity {
             return rootView;
         }
     }
+
+
     public static class RavenComplete extends Fragment {
 
         @Override
@@ -4446,6 +4448,9 @@ public class RavenTestEven extends ActionBarActivity {
             File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_raven_even.txt");
             mf.writeFile(file, raven_sb_even.toString().getBytes());
 
+            mTimer.cancel();
+            mTimer.purge();
+            Log.i("test", "even mTimer+ cancle");
 
             final Handler handler = new Handler();
 
@@ -4484,4 +4489,5 @@ public class RavenTestEven extends ActionBarActivity {
     public void onBackPressed() {
 
     }
+
 }

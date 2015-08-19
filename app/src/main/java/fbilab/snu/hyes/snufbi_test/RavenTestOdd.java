@@ -4493,6 +4493,9 @@ public class RavenTestOdd extends ActionBarActivity {
             File file = mf.makeFile(makeDirectory(savepath), savepath+"/"+id+"_raven_odd.txt");
             mf.writeFile(file, raven_sb_odd.toString().getBytes());
 
+            mTimer.cancel();
+            mTimer.purge();
+            Log.i("test", "odd mTimer+ cancle");
 
             final Handler handler = new Handler();
 

@@ -634,13 +634,14 @@ public class TMTTestS extends Activity {
 
         @Override
         protected void onStop() {
-            super.onStop();
+
             Log.i("test", "B onStop()");
             if(mTimer !=null) {
                 Log.i("test", "B timer stop()");
                 mTimer.cancel();
                 mTimer.purge();
             }
+            super.onStop();
         }
 
         @Override

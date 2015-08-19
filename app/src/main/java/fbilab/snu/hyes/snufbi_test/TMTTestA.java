@@ -71,7 +71,6 @@ public class TMTTestA extends Activity {
             vm.setOnTouchListener(new View.OnTouchListener() {
                 public boolean onTouch(View v, MotionEvent event) {
 
-
                     if(event.getAction()==MotionEvent.ACTION_DOWN)
                     {
 
@@ -352,6 +351,7 @@ public class TMTTestA extends Activity {
 
         }
 
+
     private void saveResult() {
 
             MakeFile mf = new MakeFile();
@@ -386,13 +386,14 @@ public class TMTTestA extends Activity {
 
     @Override
     protected void onStop() {
-        super.onStop();
+
         Log.i("test", "A onStop()");
         if(mTimer !=null) {
             Log.i("test", "A timer stop()");
             mTimer.cancel();
             mTimer.purge();
         }
+        super.onStop();
     }
 
     @Override
